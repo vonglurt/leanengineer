@@ -1,0 +1,96 @@
+========================================================================
+RESEARCH-TOPIC REGISTER
+========================================================================
+
+Document ID : RESEARCH_TOPICS
+Revision    : B
+Date        : 2026-11-25 (living register)
+Declaration : DEC-00 (rules R-01, R-02, R-06)
+Governed by : SP-00, Section V-F
+File        : 00_COURSE/RESEARCH_TOPICS.txt
+
+------------------------------------------------------------------------
+HOW A TOPIC IS OPENED (BP-13: QUESTIONS FIRST)
+------------------------------------------------------------------------
+
+A research topic begins at a source -- usually a lecture timestamp --
+and is opened by an opening note, Pnn-YYYY-MM-DD-RTnn, written in
+this order. Conclusions come last.
+
+  I.   Source and claim     What was said or shown, quoted, with the
+                            timestamped link and the frame if any.
+  II.  Assumptions          What the source states it assumes, and
+                            what it must assume without saying so.
+  III. Opening questions    The standard nine below, made specific.
+  IV.  Preliminary analysis Marked as preliminary, and by whom.
+  V.   Side projects        Anything that would take the work off
+                            the main line (DEC-00, R-07).
+  VI.  Critical review      As in every document.
+
+The standard opening questions:
+
+  Q1  Definition    What exactly is claimed? By what criterion?
+  Q2  Mechanism     How does it work, at the level of an example?
+  Q3  Conditions    What must be supplied for it to hold?
+  Q4  Scope         What does it not cover?
+  Q5  Dispute       What question was raised against it, and what is
+                    the sharpest answer?
+  Q6  Lens          What is the nearest engineering practice, and
+                    where does the comparison fail?
+  Q7  Cost          What is paid, and when is it worth paying?
+  Q8  Implication   What follows for future technology?
+  Q9  Refutation    What observation would show it false or narrower?
+
+A topic that needs long exploration is not pursued in the session.
+It is proposed as a side project (DEC-00, R-06).
+
+Status values: OPEN (questions posed); ACTIVE (under discussion);
+POSITION (the author's position is recorded -- cite the record);
+PARKED (moved to a side project).
+
+------------------------------------------------------------------------
+TOPICS
+------------------------------------------------------------------------
+
+RT-01  CAN EVERY SOFTWARE ERROR BE MOVED TO THE EDITOR?
+  Source    : [L01 @ 13:58]  https://youtu.be/s9Dyiu4S4vA?t=838
+              Slide "Errors in scientific computing software"
+              [JOSEPHSON25-L01]
+  Opened    : 2026-11-25
+  Records   : P01-2026-11-25-RT01 (opening note)
+              P01-2026-11-25-F01 (slide, transcribed)
+  Links     : P01-OQ-02, P01-OQ-03, P01-OQ-04
+  Status    : OPEN
+  Next      : Author's positions on Q1 to Q9; examples to be checked
+              in the editor (P01-2026-11-25-RT01/A-01, A-02).
+
+RT-02  WHAT DOES A PROOF OVER THE REALS SAY ABOUT A PROGRAM RUN IN
+       FLOATING POINT?
+  Source    : [L01 @ 1:08:14]  https://youtu.be/s9Dyiu4S4vA?t=4094
+              Spoken over the slide "Bug-Free BET Analysis"; and the
+              closing question of L01 [JOSEPHSON25-L01]
+  Opened    : 2026-11-25
+  Records   : P01-2026-11-25-RT02 (opening note)
+              P01-2026-11-25-F02 (slide, transcribed)
+  Links     : RT-01 (its excluded category); P01-OQ-04; SIDE-01
+  Status    : OPEN
+  Next      : Author's positions on Q1 to Q9 and on the preliminary
+              position; example to be run (P01-2026-11-25-RT02/A-01,
+              A-02).
+
+<Next entry form:>
+<RT-nn  TITLE AS A QUESTION>
+<  Source    : [Lnn @ h:mm:ss]  https://youtu.be/<id>?t=<seconds>>
+<  Opened    : YYYY-MM-DD>
+<  Records   : Pnn-YYYY-MM-DD-RTnn>
+<  Links     : open questions, side projects>
+<  Status    : OPEN>
+<  Next      : one line>
+
+------------------------------------------------------------------------
+REVISION HISTORY
+------------------------------------------------------------------------
+
+Rev  Date        Change
+A    2026-11-25  Register opened with RT-01.
+B    2026-11-25  RT-02 added.

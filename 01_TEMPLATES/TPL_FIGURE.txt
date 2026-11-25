@@ -1,0 +1,29 @@
+========================================================================
+FIGURE FILE
+------------------------------------------------------------------------
+Figure ID   : <Document ID>-Fnn
+Label       : Fig. <n>
+Cited in    : <Document ID>, Section <n>
+Source      : <Original | Adapted from [KEY] | Photograph | Screenshot
+              | Video frame of [KEY] at h:mm:ss, with share link>
+Image file  : <none | <Figure ID>_<TITLE>.png (own material)
+              | 99_LOCAL/frames/<video id>_t<seconds>.png (local)>
+Regenerate  : <make shot V=<video id> T=<seconds>, for a video frame>
+Data source : <none | file or Lean source Document ID>
+Revision    : A  YYYY-MM-DD
+========================================================================
+
+<ASCII drawing, at most 72 columns wide.
+
+For an image (video frame, photograph, screenshot), give two parts
+(BP-15):
+
+TRANSCRIPTION  Every piece of text in the image, in ASCII, laid out
+               as in the image; then one sentence on what else is
+               visible.
+ANALYSIS       Numbered points: what the image claims, what it
+               assumes, what it leaves out.>
+
+------------------------------------------------------------------------
+Fig. <n>. <Caption in sentence case, ending with a period. IEEE places
+the figure caption below the figure.>

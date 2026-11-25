@@ -1,0 +1,80 @@
+========================================================================
+TABLE FILE
+------------------------------------------------------------------------
+Table ID    : SP-00-T02
+Label       : TABLE II
+Cited in    : SP-00, Section III-H
+Source      : Original; to be checked in the editor (SP-00/A-03)
+Revision    : A  2026-11-25
+========================================================================
+
+                                TABLE II
+                      LEAN NOTATION IN ASCII NOTES
+
++--------------------+---------------------------+---------------------+
+| Concept            | ASCII form in Lean        | Editor input (a)    |
++====================+===========================+=====================+
+| implication        | p -> q                    | \to                 |
++--------------------+---------------------------+---------------------+
+| if and only if     | p <-> q                   | \iff                |
++--------------------+---------------------------+---------------------+
+| for all            | forall x, P x             | \forall             |
++--------------------+---------------------------+---------------------+
+| there exists       | Exists fun x => P x (b)   | \exists             |
++--------------------+---------------------------+---------------------+
+| and                | p /\ q                    | \and                |
++--------------------+---------------------------+---------------------+
+| or                 | p \/ q                    | \or                 |
++--------------------+---------------------------+---------------------+
+| not                | Not p (c)                 | \not                |
++--------------------+---------------------------+---------------------+
+| not equal          | Ne a b (d)                | \ne                 |
++--------------------+---------------------------+---------------------+
+| less or equal      | a <= b                    | \le                 |
++--------------------+---------------------------+---------------------+
+| greater or equal   | a >= b                    | \ge                 |
++--------------------+---------------------------+---------------------+
+| function           | fun x => e                | none needed; fun is |
+|                    |                           | a keyword           |
++--------------------+---------------------------+---------------------+
+| anonymous          | none; use the named       | \< and \>           |
+| constructor        | constructor, e.g.         |                     |
+|                    | And.intro ha hb           |                     |
++--------------------+---------------------------+---------------------+
+| rewrite right to   | rw [<- h] (e)             | \l                  |
+| left               |                           |                     |
++--------------------+---------------------------+---------------------+
+| natural numbers    | Nat                       | \N (f)              |
++--------------------+---------------------------+---------------------+
+| integers           | Int                       | \Z (f)              |
++--------------------+---------------------------+---------------------+
+| real numbers       | Real (Mathlib)            | \R (f)              |
++--------------------+---------------------------+---------------------+
+| product type       | Prod A B                  | \times              |
++--------------------+---------------------------+---------------------+
+| composition        | Function.comp f g         | \circ               |
++--------------------+---------------------------+---------------------+
+| membership         | none; in notes write x    | \in                 |
+|                    | \in S                     |                     |
++--------------------+---------------------------+---------------------+
+| Greek letters      | alpha, beta, or any ASCII | \alpha, \beta       |
+|                    | name                      |                     |
++--------------------+---------------------------+---------------------+
+
+Notes:
+(a) Input codes are typed in VS Code with the Lean 4 extension; the code
+    is replaced by the symbol as you type. Because the codes are
+    themselves ASCII, they are used in notes wherever Lean has no ASCII
+    form.
+(b) The form "exists x, P x" may also be accepted; verify in the editor
+    before relying on it.
+(c) "!p" is Boolean negation (type Bool), not logical negation (type
+    Prop).
+(d) "a != b" is Boolean inequality (bne), not the proposition Ne a b. Do
+    not mix them.
+(e) Verify that "<-" is accepted in rw; if not, write \l in notes and
+    use the symbol in the .lean file.
+(f) The blackboard-bold symbols are notation defined in Mathlib. Nat and
+    Int are core Lean; Real is defined in Mathlib.
+
+Sources: [TPIL4], [MATHLIB-STYLE].

@@ -1,0 +1,85 @@
+========================================================================
+SIDE-PROJECT REGISTER
+========================================================================
+
+Document ID : SIDE_PROJECTS
+Revision    : B
+Date        : 2026-11-25 (living register)
+Declaration : DEC-00 (rules R-06, R-07)
+File        : 00_COURSE/SIDE_PROJECTS.txt
+
+------------------------------------------------------------------------
+HOW TO USE
+------------------------------------------------------------------------
+
+Ideas for later work are entered here as they arise, with their
+origin, so that the main line of study is not interrupted. An entry
+is one question and one first step, no more.
+
+A side project is started only on the author's decision. If it needs
+long research, the author may grant permission for a separate agent
+to carry it out (DEC-00, R-06); the assistant does not start one on
+its own initiative.
+
+Status values: CANDIDATE (noted, not started); APPROVED (the author
+has decided to do it); ACTIVE; DONE (cite the record); DROPPED (with
+the reason).
+
+Entry form:
+
+  SIDE-nn  <SHORT TITLE>
+    Question   :
+    Origin     : <record and section, or lecture timestamp>
+    First step :
+    Proposed by: <author | assistant>
+    Status     :
+
+------------------------------------------------------------------------
+ENTRIES
+------------------------------------------------------------------------
+
+SIDE-01  PROVED BOUNDS ON FLOATING-POINT ROUND-OFF IN LEAN
+  Question   : The lectures set floating-point error aside. What
+               exists, in Lean or Mathlib, for proving a bound on
+               the round-off error of a computation?
+  Origin     : P01-2026-11-25-RT01, Sections II (S1) and IV-D;
+               P01-2026-11-25-RT02, Sections IV-D and V;
+               [L01, chapter "Types of errors"; L01 @ 1:08:14]
+  First step : Survey what Lean and Mathlib provide for IEEE 754
+               arithmetic and interval arithmetic; list sources.
+  Target     : State and prove the error bound of RT-02, eq. (3),
+               for a + b - b; then for a first-order recursive
+               filter.
+  Proposed by: assistant
+  Status     : CANDIDATE
+
+SIDE-02  A CONTROL-THEORY RESULT FORMALIZED IN LEAN
+  Question   : Can a stability criterion for a low-order closed loop
+               (for example, Routh-Hurwitz for a second- or
+               third-order characteristic polynomial) be stated and
+               proved in Lean with Mathlib?
+  Origin     : P01-2026-11-25-RT01, Section IV-F; DEC-00, Section
+               III-A (the reader's own field)
+  First step : State the second-order case precisely, in words and
+               in Lean; find what Mathlib has on polynomial roots.
+  Proposed by: assistant
+  Status     : CANDIDATE
+
+SIDE-03  PHYSICAL UNITS AS TYPES IN LEAN
+  Question   : How far can dimensional analysis be carried by Lean's
+               type checker, so that adding volts to amperes is
+               rejected in the editor?
+  Origin     : P01-2026-11-25-RT01, Section IV-F; SP-00, TABLE IV,
+               row "Type checking"
+  First step : Find existing work on units in Lean, Mathlib, and
+               SciLean [SCIL]; list sources.
+  Proposed by: assistant
+  Status     : CANDIDATE
+
+------------------------------------------------------------------------
+REVISION HISTORY
+------------------------------------------------------------------------
+
+Rev  Date        Change
+A    2026-11-25  Register opened with SIDE-01 to SIDE-03.
+B    2026-11-25  SIDE-01: origin and target added from RT-02.

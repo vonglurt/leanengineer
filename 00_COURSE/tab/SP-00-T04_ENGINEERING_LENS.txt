@@ -1,0 +1,102 @@
+========================================================================
+TABLE FILE
+------------------------------------------------------------------------
+Table ID    : SP-00-T04
+Label       : TABLE IV
+Cited in    : SP-00, Sections V-D, V-E
+Source      : Original
+Revision    : A  2026-11-25
+========================================================================
+
+                                TABLE IV
+                ENGINEERING LENS ON LEAN, AND ITS LIMITS
+
++-------------------+-----------------------+--------------------------+
+| Lean concept      | Engineering analog    | Where it breaks          |
++===================+=======================+==========================+
+| Type checking     | Dimensional (unit)    | Types can encode any     |
+|                   | analysis: an          | proposition, not only    |
+|                   | ill-formed expression | units; passing a type    |
+|                   | is rejected before    | check can mean a theorem |
+|                   | any value is          | is proved.               |
+|                   | computed.             |                          |
++-------------------+-----------------------+--------------------------+
+| Theorem statement | Requirement or        | A specification carries  |
+|                   | specification.        | tolerances and can be    |
+|                   |                       | negotiated; a statement  |
+|                   |                       | is exact.                |
++-------------------+-----------------------+--------------------------+
+| Proof accepted by | Verification          | A proof covers every     |
+| the kernel        | evidence: test        | case; a test samples.    |
+|                   | report, certificate   | Neither shows that the   |
+|                   | of conformance.       | statement matches the    |
+|                   |                       | intent (validation).     |
++-------------------+-----------------------+--------------------------+
+| Small trusted     | Traceability of a     | The kernel is trusted by |
+| kernel            | measurement to a      | review of a small        |
+|                   | primary reference     | program, not by          |
+|                   | standard.             | calibration against the  |
+|                   |                       | physical world.          |
++-------------------+-----------------------+--------------------------+
+| Axioms: propext,  | Stated assumptions    | Axioms are chosen, not   |
+| Classical.choice, | and operating         | measured; they are never |
+| Quot.sound        | conditions.           | tested against the       |
+|                   |                       | world.                   |
++-------------------+-----------------------+--------------------------+
+| sorry             | An open TBD in a      | A TBD usually blocks     |
+|                   | specification.        | sign-off. A sorry warns  |
+|                   |                       | where it is written, but |
+|                   |                       | theorems that use it     |
+|                   |                       | compile silently; #print |
+|                   |                       | axioms reveals it.       |
++-------------------+-----------------------+--------------------------+
+| Tactics: simp,    | Design automation:    | Tactic output is         |
+| omega, decide     | synthesis,            | re-checked by the        |
+|                   | auto-router, solver.  | kernel, so the tactic    |
+|                   |                       | need not be trusted; EDA |
+|                   |                       | output is usually        |
+|                   |                       | trusted once the tool is |
+|                   |                       | qualified.               |
++-------------------+-----------------------+--------------------------+
+| Mathlib           | Standard parts        | Lemmas are proved, not   |
+|                   | library with          | characterized: no        |
+|                   | datasheets.           | tolerance, derating, or  |
+|                   |                       | end of life -- though    |
+|                   |                       | names are deprecated.    |
++-------------------+-----------------------+--------------------------+
+| rfl versus a      | Identical netlists    | Which equalities hold by |
+| proved equality   | versus formal         | definition depends on    |
+|                   | equivalence checking. | how the definitions were |
+|                   |                       | written (n + 0 versus 0  |
+|                   |                       | + n), not on the         |
+|                   |                       | mathematics.             |
++-------------------+-----------------------+--------------------------+
+| Nat subtraction   | Saturating arithmetic | Nat is unbounded: it     |
+| (truncating)      | in fixed-width        | saturates at zero only,  |
+|                   | hardware.             | never at a maximum.      |
+|                   |                       | UInt8, by contrast,      |
+|                   |                       | wraps like a register.   |
++-------------------+-----------------------+--------------------------+
+| Constructive      | A design procedure    | A classical existence    |
+| existence proof   | that yields a working | proof is like proving    |
+|                   | design.               | some design meets the    |
+|                   |                       | spec while giving no way |
+|                   |                       | to find it.              |
++-------------------+-----------------------+--------------------------+
+| #print axioms     | Bill of materials of  | Close fit. It lists      |
+|                   | assumptions;          | axioms only, not the     |
+|                   | dependency audit.     | lemmas used.             |
++-------------------+-----------------------+--------------------------+
+| lean-toolchain    | Instrument model and  | Close fit. A newer       |
+| and Mathlib       | calibration record;   | version can rename or    |
+| version           | controlled tool       | remove lemmas, so old    |
+|                   | version.              | proofs may stop          |
+|                   |                       | compiling.               |
++-------------------+-----------------------+--------------------------+
+
+Notes:
+(a) Every analogy used in a report's Discussion must cite its row here,
+    or add a row, including the third column (SP-00, Section V-D, step
+    5; BP-10).
+
+Sources: [IEEE-1012], [TPIL4], [BARENDREGT05].

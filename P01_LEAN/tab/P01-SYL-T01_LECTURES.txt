@@ -1,0 +1,71 @@
+========================================================================
+TABLE FILE
+------------------------------------------------------------------------
+Table ID    : P01-SYL-T01
+Label       : TABLE I
+Cited in    : P01-SYL, Sections II, III
+Source      : Compiled from [LFSE24-SCHED] and [JOSEPHSON25-LFSE]
+Revision    : A  2026-11-25
+========================================================================
+
+                                TABLE I
+             LECTURES, RUNNING TIMES, TOPICS, AND READINGS
+
++-----+--------+----------+-------------------------+------------------+
+| Lec | Given  | Running  | Topic (a)               | Readings (b)     |
+|     | (2024) | time     |                         |                  |
++=====+========+==========+=========================+==================+
+| L01 | Jul 09 | 2:01:54  | Introduction to Lean    | MoP 1.1-1.2      |
+|     |        |          | and proofs              |                  |
++-----+--------+----------+-------------------------+------------------+
+| L02 | Jul 10 | 1:50:21  | Equalities and          | MoP 1.2-1.5      |
+|     |        |          | inequalities            |                  |
++-----+--------+----------+-------------------------+------------------+
+| L03 | Jul 16 | 1:59:23  | Proofs with structure   | MoP 2; MIL 1-2   |
++-----+--------+----------+-------------------------+------------------+
+| L04 | Jul 17 | 2:01:22  | Proofs with structure   | MoP 4; MIL 3     |
+|     |        |          | II                      |                  |
++-----+--------+----------+-------------------------+------------------+
+| L05 | Jul 23 | 1:29:07  | Proofs about functions; | MoP 8; MIL 4.2;  |
+|     |        |          | types                   | TPIL 2           |
++-----+--------+----------+-------------------------+------------------+
+| L06 | Jul 24 | 1:48:06  | Calculus-based proofs   | MIL 10; MIL 9    |
+|     |        |          |                         | for limits       |
++-----+--------+----------+-------------------------+------------------+
+| L07 | Aug 06 | 2:02:39  | Functions, recursion,   | FPIL 1.1-1.4     |
+|     |        |          | structures              |                  |
++-----+--------+----------+-------------------------+------------------+
+| L08 | Aug 07 | 1:23:45  | Polymorphic functions   | FPIL 1.3-1.5     |
+|     |        |          | for floats and reals;   |                  |
+|     |        |          | lists                   |                  |
++-----+--------+----------+-------------------------+------------------+
+| L09 | Aug 13 | 1:57:42  | Lists, indexing,        | FPIL 2, 3, 4, 5, |
+|     |        |          | input/output, compiling | 10               |
+|     |        |          | Lean to C               |                  |
++-----+--------+----------+-------------------------+------------------+
+| L10 | Aug 20 | 2:07:06  | LeanMD and BET analysis | none listed      |
+|     |        |          | in Lean                 |                  |
++-----+--------+----------+-------------------------+------------------+
+| L11 | Aug 21 | 1:59:45  | SciLean (guest          | SCIL             |
+|     |        |          | instructor: Tomas       |                  |
+|     |        |          | Skrivan)                |                  |
++-----+--------+----------+-------------------------+------------------+
+| All |        | 20:41:10 | Eleven lectures         |                  |
++-----+--------+----------+-------------------------+------------------+
+
+Notes:
+(a) Topics are from the course schedule [LFSE24-SCHED], which lists
+    eleven recorded sessions. ASSUMPTION: session k is video Lecture k,
+    by order. Confirmed against the video chapter lists for L01 and L02
+    only.
+(b) Chapter numbers as given in the schedule. MoP = [MOP]; MIL = [MIL];
+    TPIL = [TPIL4]; FPIL = [FPIL]; SCIL = [SCIL]. Numbering may differ
+    in current editions.
+(c) Running times were measured from the downloaded video files on
+    2026-11-25 and rounded to the second.
+(d) Video links, https://youtu.be/<id>: L01 s9Dyiu4S4vA; L02
+    y66qo38ICFE; L03 5bRGWaaCuMs; L04 qqsqG3Xa6PM; L05 HNVo-DCr-pI; L06
+    bldhmF1Isk4; L07 AW_igenZJsA; L08 -lh3kO6NLHM; L09 eW55_-k7aII; L10
+    gbbGXti5gMc; L11 X1oEV5SsFJ8.
+
+Sources: [LFSE24-SCHED], [JOSEPHSON25-LFSE], [LFSE24-REPO].

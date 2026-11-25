@@ -1,0 +1,26 @@
+========================================================================
+TABLE FILE
+------------------------------------------------------------------------
+Table ID    : <Document ID>-Tnn
+Label       : TABLE <Roman numeral>
+Cited in    : <Document ID>, Section <n>
+Source      : <Original | Adapted from [KEY] | Data from <file>>
+Revision    : A  YYYY-MM-DD
+========================================================================
+
+                         TABLE <Roman numeral>
+                        <TITLE IN CAPITALS>
+
++------------------+------------------+------------------+
+| <Column head>    | <Column head>    | <Column head>    |
++==================+==================+==================+
+| <cell>           | <cell>           | <cell>           |
++------------------+------------------+------------------+
+| <cell>           | <cell>           | <cell>           |
++------------------+------------------+------------------+
+
+Notes:
+(a) <Table note. IEEE places the label and title above the table and
+    lettered notes below it.>
+
+Sources: <[KEY], cited by register key (SP-00, Section III-E).>

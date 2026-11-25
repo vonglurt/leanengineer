@@ -1,0 +1,9 @@
+# Local-only material: third-party transcripts, video frames, PDFs.
+# See 00_COURSE/DEC-00_DECLARATION.txt, rule R-10.
+99_LOCAL/
+
+# Lean / Lake build output
+.lake/
+
+# macOS
+.DS_Store

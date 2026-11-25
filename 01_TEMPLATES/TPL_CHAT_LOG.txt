@@ -1,0 +1,57 @@
+========================================================================
+CHAT LOG -- <SUBJECT>
+========================================================================
+
+Document ID : Pnn-YYYY-MM-DD-C
+Revision    : A
+Date        : YYYY-MM-DD
+Project     : Pnn <NAME>
+Setting     : <in class | office hours | peer study | AI assistant>
+Participants: <STUDENT; PROF; PEER-1; AI (<tool>, <model>)>
+Raw copy    : Pnn-YYYY-MM-DD-C-RAW.txt
+Cited by    : <Pnn-YYYY-MM-DD-R>
+Declaration : DEC-00
+Editor      : <Von Glurt | AI assistant, for review by the author>
+File        : Pnn_<NAME>/YYYY-MM-DD/Pnn-YYYY-MM-DD-C.txt
+
+------------------------------------------------------------------------
+EDITORIAL NOTE (SP-00, Section III-F)
+------------------------------------------------------------------------
+
+Spelling and grammar corrected silently. Wording tightened for
+coherence; meaning unchanged.
+  [text]  editor insertion
+  [...]   omission (reason given if longer than one sentence)
+  [?]     meaning uncertain; original wording kept
+Lean code, mathematical statements, error messages, and quotations
+are verbatim.
+
+------------------------------------------------------------------------
+TRANSCRIPT
+------------------------------------------------------------------------
+
+#001  STUDENT  hh:mm
+      <Text, indented six spaces, hard return at column 72.>
+
+#002  PROF  hh:mm
+      <Text.>
+
+------------------------------------------------------------------------
+SUMMARY
+------------------------------------------------------------------------
+
+Key claims
+  - <Claim.> [#nnn]
+
+Sent to the open-question register
+  - Pnn-OQ-nn  <Question.> [#nnn]
+
+Editorial decisions
+  - <Each omission longer than one sentence, each [?], and why.>
+
+------------------------------------------------------------------------
+REVISION HISTORY
+------------------------------------------------------------------------
+
+Rev  Date        Change
+A    YYYY-MM-DD  Edited from Pnn-YYYY-MM-DD-C-RAW.

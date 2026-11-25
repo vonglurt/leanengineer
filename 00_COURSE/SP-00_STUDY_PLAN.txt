@@ -1,0 +1,844 @@
+========================================================================
+                     STUDY PLAN AND NOTEBOOK METHOD
+              Mathematics Course -- Project P01: Lean 4
+========================================================================
+
+Document ID : SP-00
+Revision    : B
+Date        : 2026-11-25
+Status      : ISSUED
+Author      : Von Glurt (Paul Richeson), Electrical Engineering
+              graduate, ABET-accredited program
+Lectures    : "Lean for Scientists and Engineers, Summer 2024", by
+              T. Josephson; syllabus P01-SYL
+Declaration : DEC-00
+Format      : 7-bit ASCII; hard line return at or before column 72;
+              IEEE report structure
+Chat record : [P01-2026-11-25-C, #001-#006]
+File        : 00_COURSE/SP-00_STUDY_PLAN.txt
+
+------------------------------------------------------------------------
+
+Abstract--This plan sets out how the author will study, record, and
+critically review a mathematics course taught as a sequence of
+projects, the first of which is the Lean 4 theorem prover and
+programming language. It fixes a notebook organized by project and by
+date; a plain-ASCII, IEEE-style session report whose final section is
+a critical review against a register of best practices; a convention
+under which tables and figures are separate files, cited the way one
+cites a picture or a data source; and an editorial policy for
+documenting discussions and chat histories. Because the class spends
+most of its time on what the material means, the plan also gives a
+protocol and an opening agenda for those discussions. Each discussion
+is tied to a concrete Lean artifact and read through an electrical
+engineer's lens of specification, verification, and trust.
+
+Index Terms--Lean 4, interactive theorem proving, propositions as
+types, formal verification, verification and validation, engineering
+notebook, IEEE style.
+
+------------------------------------------------------------------------
+I. INTRODUCTION
+------------------------------------------------------------------------
+
+A. Purpose
+
+This document governs the author's course notebook. It answers three
+questions: what is recorded, in what form, and how each record is
+reviewed so that lessons carry forward from one session, and from one
+project, to the next.
+
+B. Scope
+
+Sections III, IV, and VI apply to every project in the course.
+Section V applies to Project P01 (Lean). Later projects add their own
+study-method section by revision of this plan.
+
+C. Author's Background and Lens
+
+The author is an electrical engineer from an ABET-accredited program
+and writes IEEE-style reports as a matter of habit. That background
+is used deliberately rather than set aside: specification,
+verification and validation, tolerance, traceability to reference
+standards, and design review are the lens through which the
+mathematics is read (Section V-E). The plan also serves ABET Student
+Outcome 7, "an ability to acquire and apply new knowledge as needed,
+using appropriate learning strategies" [1].
+
+The reader for whom all of this is written is defined in the
+declaration, DEC-00, Section III: an expert in the engineering
+mathematics listed there, who needs reminding by reference and not
+teaching, and a reader able to check every claim.
+
+D. Organization
+
+Section II lists the prior work on which the plan rests. Section III
+defines the notebook: folders, identifiers, text format, figures and
+tables, citations, chat records, revisions, Lean source files,
+lecture timestamps, and screenshots. Section IV defines the session
+report. Section V is the study method for P01, including the
+discussion protocol, the agenda, and the research-topic protocol.
+Section VI defines the critical review and the best-practice
+register. Section VII gives the schedule, Section VIII concludes, and
+Section IX applies the critical review to this plan itself.
+
+------------------------------------------------------------------------
+II. PRIOR WORK AND REFERENCE BASIS
+------------------------------------------------------------------------
+
+A. Lean and Formal Proof
+
+Lean 4 is described by its designers in [2]. The standard tutorials
+are Theorem Proving in Lean 4 [3], which develops dependent type
+theory and logic; Functional Programming in Lean [4], which treats
+Lean as a programming language; and Mathematics in Lean [5], which
+works through undergraduate mathematics with the Mathlib library [6].
+The Natural Number Game [7] is a self-paced introduction to tactic
+proofs. The correspondence between propositions and types, and
+between proofs and programs, is traced in [8] and [9]. Surveys of
+proof assistants, and of formal proof as a mathematical practice, are
+[10]-[12].
+
+B. Engineering Method
+
+The distinction between verification and validation, and the notion
+of traceability, are taken from IEEE Std 1012 [13]. The idea of a
+uniquely identified, self-describing information item is taken from
+ISO/IEC/IEEE 15289 [14]. The Plan-Do-Check-Act (PDCA) improvement
+cycle and the control of documented information are taken from
+ISO 9001 [15]. Laboratory-notebook practice -- raw records kept and
+never overwritten -- follows [16]. Citation format follows the IEEE
+Reference Guide [17].
+
+C. Status of the References
+
+All references in this issue were compiled on 2026-11-25 with the help
+of an AI assistant. Each is marked UNVERIFIED in the master register,
+00_COURSE/REFERENCES.txt, until the author has checked it against the
+source (BP-03, A-02).
+
+D. Lecture Source
+
+The lectures followed in P01, with their running times, topics, and
+readings, are set out in the syllabus, P01-SYL.
+
+------------------------------------------------------------------------
+III. NOTEBOOK METHOD
+------------------------------------------------------------------------
+
+A. Folder Structure
+
+The notebook is organized by project and by date, as shown in Fig. 1
+[file: 00_COURSE/fig/SP-00-F01_FOLDER_TREE.txt]. Material that applies
+to every project lives in 00_COURSE. Blank forms live in 01_TEMPLATES.
+Each project has one folder (P01_LEAN, then P02_..., and so on)
+holding a project index, a Lean workspace where one is needed, and one
+sub-folder per session date in ISO 8601 form, YYYY-MM-DD, which sorts
+in date order in any file listing. A date folder holds that day's
+report, chat logs, and the figures (fig/) and tables (tab/) that the
+report cites. Third-party material is kept in 99_LOCAL, which is not
+published (Section III-I).
+
+No IEEE standard prescribes the layout of a personal notebook. "IEEE
+storage format" is interpreted here as IEEE editorial conventions for
+the documents themselves [17], combined with the practice of uniquely
+identified, self-describing information items [14]. This
+interpretation is to be confirmed (A-04).
+
+B. Document Identifiers and File Names
+
+Every file carries a Document ID in its header and in its file name,
+so that a file copied out of its folder still identifies itself. The
+scheme is given in TABLE I
+[file: 00_COURSE/tab/SP-00-T01_DOCUMENT_IDS.txt].
+
+File names use only the characters A-Z, a-z, 0-9, hyphen, underscore,
+and period, and never spaces. The form is
+
+    <Document ID>[_<SHORT_TITLE>].txt
+
+for example P01-2026-11-25-R.txt or SP-00-F01_FOLDER_TREE.txt.
+
+C. Text Format
+
+1) Character set: 7-bit ASCII only. No tabs, curly quotes, special
+dashes, or symbols. A dash is written "--". Mathematical and Lean
+symbols are written as described in Section III-H.
+
+2) Line length: a hard line return at or before column 72, so that a
+file reads the same in any editor, terminal, printout, or diff.
+
+3) Headings: IEEE order and numbering. Sections take capital Roman
+numerals and capital letters (I. INTRODUCTION); subsections take
+capital letters (A. Purpose); third-level headings are numbered
+in-line (1) Character set:). Cross-references take the form
+"Section III-C".
+
+4) Emphasis: no typographic emphasis. A term at its point of
+definition may be marked with asterisks, *like this*, sparingly.
+
+5) Equations: on their own line, indented, and numbered at the right
+margin, so that they can be cited as (1), (2), and so on.
+
+        a + 0 = a                                              (1)
+
+D. Figures and Tables as Cited Artifacts
+
+Tables and figures are never embedded in the body text. Each is its
+own file in the fig/ or tab/ folder beside the document that cites
+it, and the body cites it the way one cites a photograph or a data
+source: by its IEEE label and its file path, for example
+"TABLE III [file: 00_COURSE/tab/SP-00-T03_P01_PHASES.txt]". This keeps
+the prose readable at 72 columns, lets a table be corrected without
+reissuing the report, and lets one table serve several reports.
+
+IEEE labeling is kept. Figures are numbered in Arabic numerals, with
+the caption below the figure ("Fig. 1."). Tables are numbered in
+Roman numerals, with the label and a capitalized title above the
+table ("TABLE I"). File names use two-digit indices (F01, T01) so
+that they sort correctly; TABLE I is file T01.
+
+A figure that is a binary image -- a photograph of the board, a
+screenshot of the Lean infoview -- is stored beside an ASCII
+descriptor file with the same Document ID and a different extension.
+The descriptor gives the caption, the source, and a text description
+of what the image shows. Templates: 01_TEMPLATES/TPL_FIGURE.txt and
+01_TEMPLATES/TPL_TABLE.txt.
+
+E. Citations
+
+1) External sources: IEEE numeric style [17]. Within a document,
+references are numbered [1], [2], ... in order of first citation and
+listed at the end. The master register, 00_COURSE/REFERENCES.txt,
+gives each source a permanent key (for example, TPIL4) so that it is
+formatted once and renumbered in each document. Figure and table
+files cite by key, e.g. [TPIL4], because one such file may serve
+several documents that number their references differently.
+
+2) Internal records (prior work in this notebook): cited by Document
+ID in brackets, e.g. [P01-2026-11-25-C], and listed under "Internal
+Records" after the external references.
+
+3) Points within a record: cited by stable identifiers only --
+section (Sec. V-B), chat turn (#003), best practice (BP-04), open
+question (P01-OQ-03), or action (A-02) -- and never by page or line
+number, which change when a file is edited. Example:
+[P01-2026-11-25-C, #001].
+
+F. Discussion and Chat Records
+
+Every discussion that informs the notes -- in class, with peers, or
+with an AI assistant -- is documented as a chat log,
+Pnn-YYYY-MM-DD-C. A second discussion on the same date is -C2, and so
+on. Two copies are kept.
+
+1) RAW copy (Pnn-YYYY-MM-DD-C-RAW.txt): the transcript as captured,
+never edited after capture. It is the record of provenance.
+
+2) EDITED copy (Pnn-YYYY-MM-DD-C.txt): the copy that reports cite,
+prepared under these rules.
+
+  a) Spelling and grammar are corrected silently.
+  b) Wording is tightened so that the exchange stays coherent and on
+     the point. Meaning is never changed. Where the meaning is
+     uncertain, the original wording is kept and marked [?].
+  c) Editor insertions are in [square brackets]. Omitted material is
+     marked [...], with a short reason for any omission longer than
+     one sentence.
+  d) Lean code, mathematical statements, error messages, and
+     quotations from sources are copied verbatim and never
+     "corrected", even when wrong -- the error may be the point.
+  e) Turns are numbered #001, #002, ... with the speaker's role:
+     STUDENT, PROF, PEER-n, or AI (with tool and model name). Peers
+     are identified by role, not by name, unless they agree
+     otherwise.
+  f) The log closes with a summary: the key claims with their turn
+     numbers, and any questions sent to the open-question register.
+
+Template: 01_TEMPLATES/TPL_CHAT_LOG.txt. The first log is
+[P01-2026-11-25-C].
+
+G. Revisions
+
+Once its date has passed, a document is changed only by issuing a new
+revision letter (A, B, C, ...) with an entry in its revision history
+saying what changed and why. An error found later is recorded as an
+erratum in the critical review of the session in which it was found,
+and corrected by revision of the original document, so that the
+history of the mistake is kept [15], [16]. The notebook is a git
+repository, published by "make deploy" as defined in DEC-00, rule
+R-09; plain ASCII at 72 columns gives clean line-by-line differences.
+
+H. Lean Source Files and Notation
+
+1) Workspace: one Lake workspace per project, in P01_LEAN/lean/,
+created with Mathlib as a dependency by following the current
+community instructions [18]. Each session report records the
+toolchain (the contents of the lean-toolchain file) and the Mathlib
+version, as one records the model and calibration date of an
+instrument (BP-04).
+
+2) File names: Lean module names are derived from file names and
+cannot contain hyphens, so a session source file is named
+S<YYYYMMDD>_<nn>.lean -- for example, S20261125_01.lean -- and is
+cited by its Document ID, P01-2026-11-25-S01.
+
+3) Notation: .lean files are exempt from the ASCII rule and follow
+the Mathlib style guidelines [19], which use Unicode. In the ASCII
+notes, Lean is written with its ASCII alternatives where they exist
+(-> for the arrow, forall, /\, \/) and otherwise with the editor
+input code (\in, \<, \>), which is itself ASCII and is exactly what
+one types in the editor. The correspondence is given in TABLE II
+[file: 00_COURSE/tab/SP-00-T02_LEAN_ASCII_NOTATION.txt].
+
+4) Completion: a result is recorded as proved only when its file
+compiles with no sorry, and #print axioms on it does not list sorryAx
+(BP-05).
+
+I. Lecture Timestamps, Screenshots, and Third-Party Material
+
+1) Timestamps: a moment in a lecture is cited as [Lnn @ h:mm:ss],
+with its share link, https://youtu.be/<video id>?t=<seconds>, at
+first use in a document. Lecture numbers and video identifiers are in
+P01-SYL, TABLE I. A timestamp given without its link is not recorded
+until the link is supplied (DEC-00, R-03).
+
+2) Lecture frames: a frame is captured from the local video file at
+the cited second by "make shot V=<video id> T=<seconds>" and stored
+as 99_LOCAL/frames/<video id>_t<seconds>.png. The published figure
+file holds a transcription of the frame, an analysis, and the command
+that regenerates it (BP-15).
+
+3) The author's own screenshots -- the editor, the Lean infoview --
+are the author's material and are stored beside their figure file, as
+in Section III-D.
+
+4) Third-party material: full transcripts, video frames, and slides
+stay in 99_LOCAL/, which .gitignore excludes from publication. Notes
+quote short passages and cite them (BP-16; DEC-00, R-10).
+
+------------------------------------------------------------------------
+IV. SESSION REPORT
+------------------------------------------------------------------------
+
+Each class session produces one report, Pnn-YYYY-MM-DD-R, written
+within 24 hours from the raw notes and the edited chat log. Its form
+is fixed by 01_TEMPLATES/TPL_SESSION_REPORT.txt and is outlined here.
+
+    Header      Document ID, date, session, declaration, chat
+                record, sources, toolchain
+    Abstract    Three to five sentences; Index Terms
+    I.          INTRODUCTION -- context; link to the previous report
+    II.         PRIOR WORK -- earlier records and literature used
+    III.        MATERIAL PRESENTED -- definitions, statements,
+                worked examples
+    IV.         RESULTS -- what was proved or shown; Lean status
+    V.          DISCUSSION -- the philosophical discussion, written
+                under the protocol of Section V-D
+    VI.         CONCLUSION
+    VII.        CRITICAL REVIEW AND BEST PRACTICES -- Section VI
+    References  External [n], then Internal Records
+    Figures and Tables -- label, caption, file path
+    Revision History
+
+Section V of a report is expected to be its longest, because that is
+where class time is spent. For a short or exercise-only session a
+short form is allowed: Sections II and III may be one paragraph each.
+Section VII is never omitted.
+
+------------------------------------------------------------------------
+V. STUDY METHOD FOR PROJECT P01: LEAN
+------------------------------------------------------------------------
+
+A. Objectives
+
+By the close of P01 the author should be able to:
+
+1) install, configure, and record a reproducible Lean 4 and Mathlib
+   environment;
+2) read and write proofs in both term style and tactic style, and
+   explain how the two correspond;
+3) state and prove results in propositional and first-order logic,
+   with equality and with induction on the natural numbers;
+4) find and use Mathlib results by name and by search, and name new
+   results by the Mathlib conventions;
+5) take one result from the course from informal statement to a
+   sorry-free formal proof, and audit its axioms;
+6) give a reasoned, referenced position on each item of the
+   discussion agenda (Section V-D).
+
+B. Phases
+
+P01 runs in seven phases, 0 to 6, listed with topics, readings,
+practice, and exit criteria in TABLE III
+[file: 00_COURSE/tab/SP-00-T03_P01_PHASES.txt]. The order follows the
+standard path through [3], [5], and [7].
+
+The lectures themselves are set out in the syllabus, P01-SYL. The
+phases are the backbone of the individual-exploration time; where
+their order differs from the lectures, the lectures govern.
+
+C. Session Cycle
+
+Each session runs the PDCA cycle [15] shown in Fig. 2
+[file: 00_COURSE/fig/SP-00-F02_SESSION_CYCLE.txt].
+
+1) Before class (Plan, about 30 minutes): read the assigned material;
+reread the actions in Section VII of the previous report; note which
+open questions are likely to come up.
+
+2) In class (Do): take raw notes; start the raw chat capture; do Lean
+scratch work in the workspace.
+
+3) After class (Check, within 24 hours, time-boxed to about two
+hours): edit the chat log; write the report; carry out the critical
+review.
+
+4) Weekly (Act, about 30 minutes): update the best-practice,
+open-question, and reference registers, and close completed actions.
+
+5) End of each phase: write a phase review, Pnn-YYYY-MM-DD-PR, that
+summarizes the phase and checks it against the exit criteria in
+TABLE III.
+
+D. Discussion Protocol and Agenda
+
+Most class time is spent on what the material means. To keep those
+discussions productive and recordable, each is written up in Section
+V of the session report under the following protocol.
+
+1) Question: state it in one sentence, precisely enough that it could
+   turn out to be wrong.
+2) Artifact: find the smallest Lean example that exhibits the issue,
+   place it in the workspace, and cite it. A claim about Lean that
+   cannot be shown in Lean is labeled as such.
+3) Positions: record the positions taken, citing chat turns.
+4) Lens: state the engineering analogy, using TABLE IV
+   [file: 00_COURSE/tab/SP-00-T04_ENGINEERING_LENS.txt].
+5) Breakdown: state where the analogy fails. This step is mandatory;
+   an analogy without a stated limit is not accepted (BP-10).
+6) Residue: what remains open goes to the open-question register in
+   P01_LEAN/P01_INDEX.txt under an ID, P01-OQ-nn.
+
+The opening agenda below seeds that register. Items are reopened as
+the course reaches them. The artifacts are written in ASCII Lean
+(TABLE II) and are to be checked in the editor during Phase 0 (A-03).
+
+P01-OQ-01  What is a proof?
+  In Lean, a proof of a proposition P is a term whose type is P, and
+  checking a proof is type checking. Does this capture what a
+  mathematician means by a proof, or only what a referee checks?
+  Artifact:
+    example (p q : Prop) (hp : p) (hq : q) : p /\ q := And.intro hp hq
+  Start: [3, "Propositions and Proofs"], [9].
+
+P01-OQ-02  What does a proof compute?
+  Under propositions-as-types [8], [9], an implication is a function
+  type, and a proof of p -> q is a function that turns evidence for p
+  into evidence for q. Yet Lean erases proofs from compiled code. In
+  what sense is a proof a program, and what is lost when it is
+  erased?
+  Artifact:
+    example (p q : Prop) : p -> q -> p := fun hp _ => hp
+  Start: [8], [9], [4].
+
+P01-OQ-03  What, exactly, is trusted?
+  When Lean reports "no goals", what has been trusted: the kernel, the
+  axioms, the statement, the hardware it ran on? Compare the de Bruijn
+  criterion -- a proof should be checkable by a program small enough
+  to be reviewed by hand [11] -- with the traceability of a
+  measurement to a primary reference standard.
+  Artifact: #print axioms on a finished theorem. Compare a proof by
+  decide with one by native_decide, which also trusts the compiler.
+  Start: [2], [11], [12].
+
+P01-OQ-04  Verified, but valid?
+  Lean checks that a proof matches its statement. Nothing checks that
+  the statement matches the intent. Natural-number subtraction in
+  Lean truncates at zero, while fixed-width hardware wraps around:
+  which one is "subtraction"? A theorem with an impossible hypothesis
+  is true and useless.
+  Artifacts:
+    example : (2 : Nat) - 5 = 0 := by decide
+    example : (2 : UInt8) - 5 = 253 := by decide
+    example (x : Nat) (h : x < 0) : x = 42 :=
+      absurd h (Nat.not_lt_zero x)
+  Lens: verification versus validation [13].
+  Start: [13], [5].
+
+P01-OQ-05  Constructive or classical?
+  Lean's core logic is constructive, but its axiom of choice yields
+  the law of the excluded middle (Classical.em), and Mathlib uses
+  classical reasoning freely. What is lost when a proof shows that
+  something exists without showing how to build it? Compare a proof
+  that some filter meeting a specification exists with a design
+  procedure that produces one.
+  Artifact: #print axioms Classical.em
+  Start: [3, "Axioms and Computation"], [10].
+
+P01-OQ-06  When are two things equal?
+  Some equalities hold by definition and are closed by rfl; others
+  hold only by proof. For n : Nat, n + 0 = n is definitional, but
+  0 + n = n needs induction. Compare two identical netlists with two
+  different netlists that a formal equivalence checker proves
+  equivalent.
+  Artifacts:
+    example (n : Nat) : n + 0 = n := rfl
+    example (n : Nat) : 0 + n = n := rfl            -- fails; try it
+    example (n : Nat) : 0 + n = n := Nat.zero_add n
+  Start: [3, "Quantifiers and Equality"], [7].
+
+P01-OQ-07  Does an automated proof explain anything?
+  Tactics such as simp, omega, and decide close goals without showing
+  why. A proof is both a certificate that something is true and an
+  explanation of why it is true. Which does Lean deliver, and which
+  does a mathematician want? Compare synthesized or auto-routed
+  hardware, which still goes to design review.
+  Artifact: one lemma proved twice -- by omega, and by an explicit
+  chain of rw steps.
+  Start: [12], [5].
+
+P01-OQ-08  Is mathematics being engineered?
+  Mathlib [6] has naming conventions [19], continuous integration,
+  deprecations, and refactors -- the apparatus of an engineered
+  product. Does building mathematics as a maintained library change
+  what mathematics is, or only how it is stored?
+  Artifact: one Mathlib source file, read against [19].
+  Start: [6], [19].
+
+P01-OQ-09  What does the foundation change?
+  Lean rests on dependent type theory, with a hierarchy of universes
+  and a proof-irrelevant Prop, not on set theory. What is different
+  about mathematics built on types rather than sets, and what stays
+  the same?
+  Artifacts:  #check Prop    #check Type    #check Type 1
+  Start: [3, "Dependent Type Theory"], [10].
+
+P01-OQ-10  What can formal proof not do?
+  Incompleteness and undecidability bound every proof system, and a
+  formal proof costs far more effort than an informal one [11]. The
+  1994 Pentium FDIV flaw [20] is a standard example of a defect that
+  testing missed, and Dijkstra observed that testing "can be used to
+  show the presence of bugs, but never to show their absence" [21].
+  Where does formal proof sit between testing and certainty?
+  Start: [11], [12], [20], [21].
+
+E. Engineering Lens
+
+TABLE IV [file: 00_COURSE/tab/SP-00-T04_ENGINEERING_LENS.txt] maps
+Lean concepts to engineering practice and states, for each, where the
+mapping fails. The lens is a tool for asking sharper questions, not a
+claim that the two fields are the same; step 5 of the protocol guards
+against reading it too literally.
+
+F. Research-Topic Protocol
+
+A concept met in a lecture that deserves study of its own becomes a
+research topic, RT-nn, entered in 00_COURSE/RESEARCH_TOPICS.txt. A
+topic is opened by questions, not conclusions (BP-13; DEC-00, R-01).
+Its opening note records the source and the claim, then the
+assumptions in the source, then a set of opening questions, and only
+then a preliminary analysis. The standard questions are listed in the
+register. Work that would need long exploration is not pursued in the
+session; it is entered in 00_COURSE/SIDE_PROJECTS.txt for the
+author's decision (DEC-00, R-06, R-07).
+
+The first topic, RT-01, was opened from lecture L01 [22] at 13:58, on
+the claim that Lean moves syntax, runtime, and semantic errors alike
+to the editor [P01-2026-11-25-RT01].
+
+------------------------------------------------------------------------
+VI. CRITICAL REVIEW AND BEST-PRACTICE PROCEDURE
+------------------------------------------------------------------------
+
+A. Purpose
+
+The last section of every report is its critical review. It is the
+Check and Act steps of the PDCA cycle [15]: it judges the session's
+work and notes, and it turns what was learned into practice for the
+next session and the next project.
+
+B. Review Questions
+
+Section VII of each report answers, briefly and in this order:
+
+1) What worked, in the studying and in the notes?
+2) What did not work? What errors were found in this or earlier
+   records? (Errata, cited by Document ID.)
+3) What hidden assumption came to light -- in the mathematics, in
+   Lean, or in the author's own reasoning?
+4) Which best practices were applied (BP-nn), and what is the
+   evidence?
+5) Which prior work, internal or external, does this session
+   confirm, extend, or contradict?
+6) What new best practice, if any, is proposed?
+7) What actions follow (A-nn), each with a due date?
+
+C. Best-Practice Register
+
+00_COURSE/BEST_PRACTICES.txt holds every practice the notebook
+follows. Each entry gives an ID (BP-nn), a statement, its source (a
+reference key or an internal record), the rationale, the records in
+which it has been applied, and a status. The entries of this initial
+issue, BP-01 to BP-12, are ACTIVE on adoption of this plan; BP-13 to
+BP-17 were added by the declaration, DEC-00. Later
+entries enter as PROPOSED from a critical review and become ACTIVE
+once used in at least two sessions and judged worthwhile. A practice
+that stops paying for itself is RETIRED, never deleted, and the
+reason is stated. The register is kept at course level so that what
+is learned in P01 carries into later projects.
+
+D. Referencing Prior Work
+
+The critical review cites its sources as the body does: external work
+by [n], and earlier records in this notebook by Document ID. A lesson
+that came from an earlier session is cited to that session, so the
+reasoning behind every practice can be traced back to where it began.
+
+------------------------------------------------------------------------
+VII. SCHEDULE AND MILESTONES
+------------------------------------------------------------------------
+
+The lectures and the time budget -- about 15 hours of lecture
+exposition, taken with breaks, and workshop time for following along
+and for individual exploration -- are set out in the syllabus,
+P01-SYL: one session per lecture, eleven in all.
+
+The weeks and the milestones M0 to M6 of TABLE III apply to the
+individual-exploration time; each milestone is the exit criterion of
+its phase. Calendar dates are not fixed, because the lectures are
+recorded and the author sets the pace. If the pace changes, the
+phases are re-planned; the exit criteria are not relaxed.
+
+------------------------------------------------------------------------
+VIII. CONCLUSION
+------------------------------------------------------------------------
+
+The plan fixes one form for every record: plain ASCII, IEEE-
+structured, filed by project and by date, with tables and figures as
+cited files and discussions as edited, cited chat logs. It puts the
+weight of each session where the class puts it -- in discussion of
+what the mathematics means -- and it ties that discussion to things
+that can be checked: a Lean artifact for each claim, and a stated
+limit for each analogy. The critical review that closes every report,
+with its best-practice register, is how the notebook is expected to
+improve over the course.
+
+------------------------------------------------------------------------
+IX. CRITICAL REVIEW AND BEST PRACTICES INCORPORATED
+------------------------------------------------------------------------
+
+A. What Works
+
+1) Traceability. Every claim, table, figure, and discussion point can
+   be followed to a reference, a record, or a chat turn.
+2) Grounding. The discussion protocol keeps the philosophical work,
+   which is the bulk of class time, attached to checkable Lean
+   artifacts.
+3) Carry-over. The course-level registers let lessons from P01 serve
+   later projects.
+4) Durability. Plain ASCII at 72 columns can be read, printed,
+   searched, and compared with standard tools for as long as the
+   notebook is kept.
+
+B. Weaknesses and Risks
+
+1) Overhead. A full IEEE report and an edited chat log for every
+   session may take longer than the time-box of Section V-C.
+   Mitigation: the short form of Section IV; time measured over the
+   first three sessions (A-05).
+2) ASCII versus Lean. Lean and Mathlib are written in Unicode.
+   Mitigation: .lean files are exempt, and notes use TABLE II.
+   Residual risk: transcription errors between the two forms.
+3) Editing drift. Correcting and tightening a chat log can shift its
+   meaning. Mitigation: the RAW copy, verbatim code and quotations,
+   and the [?] marker (Section III-F).
+4) Unverified references. The references of this issue were compiled
+   with an AI assistant and have not been checked against the
+   sources; titles, page ranges, URLs, and the current revision of
+   each standard may be wrong. Mitigation: UNVERIFIED status until
+   checked (BP-03, A-02).
+5) Unverified artifacts. The Lean examples of Section V-D and the
+   rows of TABLE II were written without a Lean installation at hand.
+   Mitigation: each is checked in the editor in Phase 0 (A-03).
+6) Interpretation. "IEEE storage format" was interpreted (Section
+   III-A) and may not match the author's existing convention (A-04).
+7) Two sequences. The lectures (P01-SYL) and the self-study phases
+   (TABLE III) may drift apart. Mitigation: the lectures govern, and
+   the phases are re-planned at each phase review.
+8) Over-read analogies. An engineering analogy can mislead as easily
+   as it clarifies. Mitigation: the mandatory breakdown step of the
+   discussion protocol (BP-10).
+9) Transcript coverage. Transcripts are on hand for two of the
+   eleven lectures (P01-SYL/A-02).
+
+C. Best Practices Incorporated
+
+The register entries adopted by this plan, with their sources, are:
+
+   BP-01  Traceable claims ................................ [13], [17]
+   BP-02  Raw records are never edited .................... [15], [16]
+   BP-03  References are verified before being relied on . Sec. IX-B
+   BP-04  The toolchain is recorded with every result ..... [16], [18]
+   BP-05  "Proved" means sorry-free and axiom-audited ..... [3], [11]
+   BP-06  The statement is validated, not only the proof .. [13]
+   BP-07  Informal argument first, formal proof second .... Sec. V-D
+   BP-08  Citation by stable identifiers only ............. [14]
+   BP-09  Every review ends in actions (PDCA) ............. [15]
+   BP-10  Every analogy is grounded and bounded ........... Sec. V-D
+   BP-11  Tables and figures are separate, cited files .... [17]
+   BP-12  Lean source follows Mathlib style ............... [19]
+   BP-13  Questions first ................................. DEC-00
+   BP-14  Expert reader; source assumptions stated ........ DEC-00
+   BP-15  Evidence timestamped and transcribed ............ DEC-00
+   BP-16  Third-party material stays local (proposed) ..... DEC-00
+   BP-17  Declaration and chat record cited ............... DEC-00
+
+D. Prior Work
+
+Revision A was the first record of the notebook. Revision B
+incorporates the declaration [DEC-00] and the syllabus [P01-SYL],
+both worked out in [P01-2026-11-25-C]. The method rests on [13]-[17],
+and the content plan on [2]-[12] and [22].
+
+E. Actions
+
+A-01  CLOSED 2026-11-25. The syllabus is P01-SYL; its open points
+      are carried there as P01-SYL/A-01 to A-04.
+A-02  Verify every entry of 00_COURSE/REFERENCES.txt against its
+      source; set its status and access date.       Due: end of W1
+A-03  Install Lean 4 and Mathlib; create P01_LEAN/lean/; record the
+      toolchain; check every row of TABLE II and every artifact of
+      Section V-D in the editor.                    Due: end of W1
+A-04  Confirm that Section III matches the author's own "IEEE
+      storage format" convention; revise if not.    Due: session S01
+A-05  Measure the time spent per session over the first three
+      reports; adjust the time-box or adopt the short form.
+                                                    Due: end of W3
+
+------------------------------------------------------------------------
+REFERENCES
+------------------------------------------------------------------------
+
+Entries [1]-[21] are UNVERIFIED; [22] is VERIFIED. Status and source
+assumptions: 00_COURSE/REFERENCES.txt.
+
+[1]  ABET, "Criteria for accrediting engineering programs," ABET,
+     Baltimore, MD, USA. [Online]. Available:
+     https://www.abet.org/accreditation/accreditation-criteria/
+
+[2]  L. de Moura and S. Ullrich, "The Lean 4 theorem prover and
+     programming language," in Automated Deduction -- CADE 28
+     (Lecture Notes in Computer Science, vol. 12699), A. Platzer and
+     G. Sutcliffe, Eds. Cham, Switzerland: Springer, 2021,
+     pp. 625-635.
+
+[3]  J. Avigad, L. de Moura, S. Kong, and S. Ullrich, Theorem Proving
+     in Lean 4. [Online]. Available:
+     https://lean-lang.org/theorem_proving_in_lean4/
+
+[4]  D. T. Christiansen, Functional Programming in Lean. [Online].
+     Available: https://lean-lang.org/functional_programming_in_lean/
+
+[5]  J. Avigad and P. Massot, Mathematics in Lean. [Online].
+     Available:
+     https://leanprover-community.github.io/mathematics_in_lean/
+
+[6]  The mathlib Community, "The Lean mathematical library," in Proc.
+     9th ACM SIGPLAN Int. Conf. Certified Programs and Proofs (CPP),
+     New Orleans, LA, USA, 2020, pp. 367-381.
+
+[7]  K. Buzzard et al., Natural Number Game (Lean 4 version).
+     [Online]. Available:
+     https://adam.math.hhu.de/#/g/leanprover-community/nng4
+
+[8]  W. A. Howard, "The formulae-as-types notion of construction," in
+     To H. B. Curry: Essays on Combinatory Logic, Lambda Calculus and
+     Formalism, J. P. Seldin and J. R. Hindley, Eds. London, U.K.:
+     Academic Press, 1980, pp. 479-490.
+
+[9]  P. Wadler, "Propositions as types," Commun. ACM, vol. 58, no. 12,
+     pp. 75-84, Dec. 2015.
+
+[10] H. Geuvers, "Proof assistants: History, ideas and future,"
+     Sadhana, vol. 34, no. 1, pp. 3-25, Feb. 2009.
+
+[11] H. Barendregt and F. Wiedijk, "The challenge of computer
+     mathematics," Phil. Trans. R. Soc. A, vol. 363, no. 1835,
+     pp. 2351-2375, Oct. 2005.
+
+[12] T. C. Hales, "Formal proof," Notices Amer. Math. Soc., vol. 55,
+     no. 11, pp. 1370-1380, Dec. 2008.
+
+[13] IEEE Standard for System, Software, and Hardware Verification
+     and Validation, IEEE Std 1012-2016.
+
+[14] Systems and Software Engineering -- Content of Life-Cycle
+     Information Items (Documentation), ISO/IEC/IEEE 15289:2019.
+
+[15] Quality Management Systems -- Requirements, ISO 9001:2015.
+
+[16] H. M. Kanare, Writing the Laboratory Notebook. Washington, DC,
+     USA: American Chemical Society, 1985.
+
+[17] IEEE Reference Guide. Piscataway, NJ, USA: IEEE. [Online].
+     Available: https://journals.ieeeauthorcenter.ieee.org/
+
+[18] Lean Prover Community, "Getting started." [Online]. Available:
+     https://leanprover-community.github.io/get_started.html
+
+[19] Lean Prover Community, "Library style guidelines" and "Naming
+     conventions." [Online]. Available:
+     https://leanprover-community.github.io/contribute/style.html
+     and https://leanprover-community.github.io/contribute/naming.html
+
+[20] T. Coe, T. Mathisen, C. Moler, and V. Pratt, "Computational
+     aspects of the Pentium affair," IEEE Comput. Sci. Eng., vol. 2,
+     no. 1, pp. 18-30, 1995.
+
+[21] E. W. Dijkstra, "Notes on structured programming," in Structured
+     Programming, O.-J. Dahl, E. W. Dijkstra, and C. A. R. Hoare.
+     London, U.K.: Academic Press, 1972, pp. 1-82.
+
+[22] T. Josephson, "Lean for Scientists and Engineers, Summer 2024 -
+     Lecture 1," YouTube, Jan. 3, 2025. [Online Video]. Available:
+     https://www.youtube.com/watch?v=s9Dyiu4S4vA
+
+Internal Records
+
+[DEC-00]               Project declaration.
+                       00_COURSE/DEC-00_DECLARATION.txt
+[P01-SYL]              Syllabus for project P01.
+                       P01_LEAN/P01-SYL_SYLLABUS.txt
+[P01-2026-11-25-C]     Planning discussion and declaration, chat log.
+                       P01_LEAN/2026-11-25/P01-2026-11-25-C.txt
+[P01-2026-11-25-RT01]  Research topic RT-01, opening note.
+                       P01_LEAN/2026-11-25/
+
+------------------------------------------------------------------------
+FIGURES AND TABLES
+------------------------------------------------------------------------
+
+Fig. 1     Notebook folder structure, by project and by date.
+           00_COURSE/fig/SP-00-F01_FOLDER_TREE.txt
+Fig. 2     Session cycle as a Plan-Do-Check-Act loop.
+           00_COURSE/fig/SP-00-F02_SESSION_CYCLE.txt
+TABLE I    Document identifiers and file names.
+           00_COURSE/tab/SP-00-T01_DOCUMENT_IDS.txt
+TABLE II   Lean notation in ASCII notes.
+           00_COURSE/tab/SP-00-T02_LEAN_ASCII_NOTATION.txt
+TABLE III  P01 phases, readings, and exit criteria.
+           00_COURSE/tab/SP-00-T03_P01_PHASES.txt
+TABLE IV   Engineering lens on Lean, and its limits.
+           00_COURSE/tab/SP-00-T04_ENGINEERING_LENS.txt
+
+------------------------------------------------------------------------
+REVISION HISTORY
+------------------------------------------------------------------------
+
+Rev  Date        Change
+A    2026-11-25  Initial issue, from [P01-2026-11-25-C, #001-#002].
+B    2026-11-25  Declaration DEC-00 and syllabus P01-SYL incorporated.
+                 Added Sections II-D, III-I, V-F; revised I-C, III-G,
+                 V-B, VII, IX; BP-13 to BP-17; reference [22]. Author
+                 named. Action A-01 closed.

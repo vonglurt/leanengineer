@@ -1,0 +1,255 @@
+========================================================================
+                     SYLLABUS -- PROJECT P01: LEAN
+       Lectures: "Lean for Scientists and Engineers, Summer 2024"
+========================================================================
+
+Document ID : P01-SYL
+Revision    : A
+Date        : 2026-11-25
+Author      : Von Glurt
+Lecturer    : Tyler Josephson (public lectures, YouTube) [1]
+Declaration : DEC-00
+Chat record : [P01-2026-11-25-C, #003-#006]
+Governed by : SP-00
+File        : P01_LEAN/P01-SYL_SYLLABUS.txt
+
+------------------------------------------------------------------------
+
+Abstract--Project P01 follows eleven recorded lectures, 20 h 41 min
+of video in all, budgeted here as about 15 hours of lecture
+exposition, taken with breaks, and workshop time for following along
+in Lean and for individual exploration. This syllabus lists the
+lectures with their running times, topics, and readings; fixes the
+shape of a session; and states the assumptions behind the time
+budget, which the author is asked to confirm.
+
+Index Terms--syllabus, Lean 4, lecture series, time budget, workshop.
+
+------------------------------------------------------------------------
+I. INTRODUCTION
+------------------------------------------------------------------------
+
+The lecture series is an introduction to Lean for non-mathematicians,
+given at UMBC in July and August 2024 and published on YouTube in
+2025 [1]. Its description names three subjects: logic and proofs for
+scientists and engineers; functional programming in Lean 4; and
+provably correct programs for scientific computing [2]. Slides and
+Lean code are said to be in the course repository [3].
+
+This syllabus serves the audience of DEC-00, Section III: lecture
+content is recorded by timestamp and reference, not re-taught.
+
+------------------------------------------------------------------------
+II. LECTURES
+------------------------------------------------------------------------
+
+The eleven lectures, with dates given, running times, topics, and
+readings, are listed in TABLE I
+[file: P01_LEAN/tab/P01-SYL-T01_LECTURES.txt].
+
+They fall into three parts. The grouping is the author's inference
+from the series description and the topics, not the lecturer's own
+division.
+
+  Part 1  Logic and proofs ......................... L01 to L06
+  Part 2  Functional programming in Lean 4 ......... L07 to L09
+  Part 3  Programs for scientific computing ........ L10 to L11
+
+The readings are The Mechanics of Proof [4], Mathematics in Lean [5],
+Theorem Proving in Lean 4 [6], Functional Programming in Lean [7],
+and Scientific Computing in Lean [8], by the chapters shown in
+TABLE I.
+
+------------------------------------------------------------------------
+III. TIME BUDGET
+------------------------------------------------------------------------
+
+A. The Figures
+
+  Recorded video, measured ....................... 20 h 41 min
+  Original class slots, 11 at 2 h [9] ............ 22 h
+  Series description [2] ......................... "~22-hour"
+  Author's budget for lecture time (DEC-00 text) . about 15 h
+
+B. Reconciliation (Assumption, to Be Confirmed)
+
+The recordings mix exposition with logistics, questions, software
+setup, and worked examples typed live. In L01, by its chapter list,
+exposition runs from 0:00 to 1:15:08, and the remaining 47 minutes
+are logistics, questions, getting connected, the web editor, and
+first examples [2]. If the other lectures divide similarly, about 13
+to 15 hours of the 20 h 41 min is exposition.
+
+ASSUMPTION: "about 15 hours of lecture time" means exposition; the
+follow-along portions of the recordings are counted as workshop
+time. The alternatives are to watch everything as lecture at about
+1.4 times speed (20.7 h / 1.4 = 14.8 h), or to raise the lecture
+budget to 21 hours. The split is fixed per lecture from its chapter
+list, when the session is prepared (A-01).
+
+C. Planning Figures for the Whole Project
+
+  Lecture exposition ......................... about 15 h
+  Breaks, 10 min per 45 min of viewing ....... about  3 h
+  Workshop: follow-along in the recordings ... about  6 h
+  Workshop: individual exploration ........... 11 h or more
+                                               (1 h per session
+                                               at the least)
+
+------------------------------------------------------------------------
+IV. SHAPE OF A SESSION
+------------------------------------------------------------------------
+
+One session per lecture, eleven in all. Each runs the cycle of SP-00,
+Fig. 2, in these blocks.
+
+1) Prepare (15 min). Read the lecture's chapter list. Mark which
+   chapters are exposition and which are follow-along. Reread the
+   open actions and the open questions likely to come up.
+
+2) Lecture (exposition chapters). View in segments of 45 minutes or
+   less, with a 10-minute break at a chapter boundary. While viewing,
+   take timestamps of three kinds:
+     - a concept to research ...... becomes a research topic, RT-nn
+     - a point for discussion ..... goes to Section V of the report
+     - a slide worth keeping ...... becomes a figure ("make shot")
+   Each timestamp is recorded with its share link (DEC-00, R-03).
+
+3) Workshop, follow-along (follow-along chapters). Reproduce the
+   lecturer's Lean work in the P01 workspace; pause as needed.
+
+4) Workshop, individual exploration (1 h or more). In this order of
+   priority: open the session's research topics, questions first
+   (DEC-00, R-01); do the exercises of the current phase (SP-00,
+   TABLE III); note ideas for side projects (DEC-00, R-07).
+
+5) Record (within 24 h). Session report, edited chat log, critical
+   review (SP-00, Sections IV and VI).
+
+The self-study phases of SP-00, TABLE III, are the backbone of the
+individual exploration. Where their order differs from the lectures,
+the lectures govern.
+
+------------------------------------------------------------------------
+V. FIRST SESSION
+------------------------------------------------------------------------
+
+Session S01 is lecture L01. Its first timestamp has been taken:
+[L01 @ 13:58], https://youtu.be/s9Dyiu4S4vA?t=838, the slide "Errors
+in scientific computing software". It opens research topic RT-01
+[P01-2026-11-25-RT01], the first use of the questions-first rule.
+
+------------------------------------------------------------------------
+VI. CRITICAL REVIEW AND BEST PRACTICES
+------------------------------------------------------------------------
+
+A. What Works
+
+Running times are measured, not estimated. Topics and readings come
+from the course's own schedule. Every figure in Section III names its
+source or is labeled as an assumption.
+
+B. Weaknesses and Risks
+
+1) The mapping of schedule rows to videos is by order, confirmed for
+   L01 and L02 only (TABLE I, note a).
+2) The 15-hour reconciliation rests on one lecture's chapter list.
+3) Chapter lists and transcripts are on hand for L01 and L02 only;
+   the other nine lectures have video files but no transcripts yet.
+4) The course repository [3] is known from the video description and
+   has not been opened.
+5) Chapter numbers of the readings are those of mid-2024 and may have
+   moved in current editions.
+
+C. Best Practices Incorporated
+
+BP-01 (traceable claims), BP-03 (references marked until verified),
+BP-11 (table as a separate cited file), BP-14 (source assumptions
+stated), BP-15 (timestamps with share links), BP-17 (declaration and
+chat record cited in the header).
+
+D. Prior Work
+
+SP-00, action A-01 (obtain the syllabus) is answered by this
+document. DEC-00 sets the audience and the rules it follows.
+
+E. Actions
+
+A-01  Confirm the reading of "15 hours" in Section III-B; then fix
+      the exposition and follow-along split for each lecture as its
+      chapter list becomes available.            Due: session S01
+A-02  Produce transcripts for L03 to L11 and run "make sources".
+                                                 Due: before each
+                                                 session
+A-03  Open the course repository [3]; record its Lean and Mathlib
+      versions for the P01 workspace.            Due: session S01
+A-04  Confirm the row-to-video mapping for L03 to L11 from their
+      chapter lists.                             Due: with A-02
+
+------------------------------------------------------------------------
+REFERENCES
+------------------------------------------------------------------------
+
+Keys are those of 00_COURSE/REFERENCES.txt, where the status and the
+assumptions of each source are recorded.
+
+[1]  T. Josephson, "Lean for Scientists and Engineers, Summer 2024,"
+     lecture series, 11 videos, YouTube, 2025. [Online]. Available:
+     https://www.youtube.com/@tylerjosephson8860
+     (JOSEPHSON25-LFSE)
+
+[2]  T. Josephson, "Lean for Scientists and Engineers, Summer 2024 -
+     Lecture 1," YouTube, Jan. 3, 2025. [Online Video]. Available:
+     https://www.youtube.com/watch?v=s9Dyiu4S4vA
+     (JOSEPHSON25-L01)
+
+[3]  ATOMS Lab, "LFSE2024," GitHub repository. [Online]. Available:
+     https://github.com/ATOMSLab/LFSE2024   (LFSE24-REPO)
+
+[4]  H. Macbeth, The Mechanics of Proof. [Online]. Available:
+     https://hrmacbeth.github.io/math2001/   (MOP)
+
+[5]  J. Avigad and P. Massot, Mathematics in Lean. [Online].
+     Available:
+     https://leanprover-community.github.io/mathematics_in_lean/
+     (MIL)
+
+[6]  J. Avigad, L. de Moura, S. Kong, and S. Ullrich, Theorem Proving
+     in Lean 4. [Online]. Available:
+     https://lean-lang.org/theorem_proving_in_lean4/   (TPIL4)
+
+[7]  D. T. Christiansen, Functional Programming in Lean. [Online].
+     Available: https://lean-lang.org/functional_programming_in_lean/
+     (FPIL)
+
+[8]  T. Skrivan, Scientific Computing in Lean. [Online]. Available:
+     https://lecopivo.github.io/scientific-computing-lean/   (SCIL)
+
+[9]  T. Josephson, "Lean for Scientists and Engineers 2024," course
+     schedule, shared spreadsheet. [Online]. Available:
+     https://docs.google.com/spreadsheets/d/
+     1ATL-RngI3IGM6uM1ZkXxQdZzYLOAxSn5ZN0MBrfq--o
+     (LFSE24-SCHED)
+
+Internal Records
+
+[DEC-00]               Project declaration.
+                       00_COURSE/DEC-00_DECLARATION.txt
+[P01-2026-11-25-C]     Planning discussion and declaration, chat log.
+                       P01_LEAN/2026-11-25/P01-2026-11-25-C.txt
+[P01-2026-11-25-RT01]  Research topic RT-01, opening note.
+                       P01_LEAN/2026-11-25/
+
+------------------------------------------------------------------------
+FIGURES AND TABLES
+------------------------------------------------------------------------
+
+TABLE I    Lectures, running times, topics, and readings.
+           P01_LEAN/tab/P01-SYL-T01_LECTURES.txt
+
+------------------------------------------------------------------------
+REVISION HISTORY
+------------------------------------------------------------------------
+
+Rev  Date        Change
+A    2026-11-25  Initial issue.

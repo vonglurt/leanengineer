@@ -1,0 +1,68 @@
+========================================================================
+FIGURE FILE
+------------------------------------------------------------------------
+Figure ID   : P01-2026-11-25-F01
+Label       : Fig. 1
+Cited in    : P01-2026-11-25-RT01, Sections I and IV
+Source      : Video frame of [JOSEPHSON25-L01] at 13:58 (838 s),
+              https://youtu.be/s9Dyiu4S4vA?t=838
+              Slide by T. Josephson; third-party material.
+Image file  : 99_LOCAL/frames/s9Dyiu4S4vA_t00838.png
+              (1280 x 720; local only, DEC-00 R-10)
+Regenerate  : make shot V=s9Dyiu4S4vA T=838
+Captured by : AI assistant with ffmpeg, from the local video file
+Revision    : A  2026-11-25
+========================================================================
+
+TRANSCRIPTION OF THE SLIDE
+
+Title: Errors in scientific computing software
+
++----------+---------------------+----------------------------+--------+
+| Category | Example             | Intervention               | Lean   |
+| of error |                     |                            |        |
++==========+=====================+============================+========+
+| Syntax   | Not closing         | Editor                     | Editor |
+|          | parentheses         |                            |        |
++----------+---------------------+----------------------------+--------+
+| Runtime  | Accessing element   | Run the program, program   | Editor |
+|          | in list that        | gives error message        |        |
+|          | doesn't exist       |                            |        |
++----------+---------------------+----------------------------+--------+
+| Semantic | Missing a minus     | Human inspection of the    | Editor |
+|          | sign, transposing   | code; test-driven          |        |
+|          | tensor indices      | development; observing     |        |
+|          |                     | anomalous behavior         |        |
++----------+---------------------+----------------------------+--------+
+
+The text above is complete: the slide carries a title and this one
+table, black text on a white slide with light gray table cells. A
+presenter toolbar is visible at the lower left. Nothing else is on
+screen.
+
+ANALYSIS
+
+1) The table has two intervention columns. "Intervention" is
+   conventional practice; "Lean" is the lecturer's proposal. The
+   conventional column moves later and gets costlier down the rows:
+   editor, then a run, then a human. The Lean column is constant.
+   The slide's whole argument is that one column is uniform.
+
+2) The categories are distinguished by the stage at which an error
+   is detected, not by its cause. The slide therefore describes a
+   re-staging of detection, not a removal of causes.
+
+3) The Semantic row is the strong claim. "Missing a minus sign" is
+   an error only against an intended result. The slide does not show
+   where that intent is written down; in Lean it must be a stated
+   theorem. The cell reads "Editor" on the unstated condition that
+   a specification exists.
+
+4) The slide omits a fourth category that the lecturer adds in
+   speech in the same chapter: floating-point and round-off error,
+   which he places outside the scope of the course.
+
+------------------------------------------------------------------------
+Fig. 1. Slide "Errors in scientific computing software" from lecture
+L01 at 13:58, transcribed. Three categories of error and the stage at
+which each is caught, in conventional practice and in Lean.

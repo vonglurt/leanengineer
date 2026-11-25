@@ -1,0 +1,164 @@
+========================================================================
+<TITLE OF THE SESSION, IN TITLE CASE>
+========================================================================
+
+Document ID : Pnn-YYYY-MM-DD-R
+Revision    : A
+Date        : YYYY-MM-DD
+Project     : Pnn <NAME>
+Session     : Snn  <lecture | discussion | exercise | lab>
+Author      : Von Glurt
+Declaration : DEC-00
+Chat record : [Pnn-YYYY-MM-DD-C, #nnn-#nnn]
+Lecture     : Lnn  https://youtu.be/<video id>  (P01-SYL, TABLE I)
+Form        : <FULL | SHORT>  (SP-00, Section IV)
+Sources     : Raw notes; transcript (99_LOCAL); readings [n]
+Toolchain   : <contents of lean-toolchain>; Mathlib <version>
+Lean files  : Pnn-YYYY-MM-DD-S01 (lean/.../SYYYYMMDD_01.lean)
+File        : Pnn_<NAME>/YYYY-MM-DD/Pnn-YYYY-MM-DD-R.txt
+
+------------------------------------------------------------------------
+
+Abstract--<Three to five sentences: what was covered, what was shown,
+what was concluded, and what remains open.>
+
+Index Terms--<Four to six terms.>
+
+------------------------------------------------------------------------
+I. INTRODUCTION
+------------------------------------------------------------------------
+
+<Where this session sits in the course and in the phase plan (SP-00,
+TABLE III). Link to the previous report: [Pnn-YYYY-MM-DD-R].>
+
+------------------------------------------------------------------------
+II. PRIOR WORK
+------------------------------------------------------------------------
+
+<Earlier records this session builds on, by Document ID, and the
+literature it draws on, by [n]. Open actions (A-nn) and open
+questions (Pnn-OQ-nn) that this session takes up.>
+
+------------------------------------------------------------------------
+III. MATERIAL PRESENTED
+------------------------------------------------------------------------
+
+A. Definitions
+
+<Each definition in words, then in ASCII Lean (SP-00, TABLE II).>
+
+B. Statements
+
+<Each theorem or claim: informal statement first (BP-07), then the
+formal statement. Equations numbered at the right margin.>
+
+        <equation>                                             (1)
+
+C. Worked Examples
+
+<Cite Lean source by Document ID. Cite figures and tables by label
+and file, e.g. Fig. 1 [file: fig/Pnn-YYYY-MM-DD-F01_<TITLE>.txt].
+Cite lecture moments as [Lnn @ h:mm:ss] with the share link,
+https://youtu.be/<video id>?t=<seconds> (DEC-00, R-03).>
+
+D. Research Topics Opened
+
+<RT-nn, each with its timestamp and its opening note,
+Pnn-YYYY-MM-DD-RTnn. Questions first (BP-13).>
+
+------------------------------------------------------------------------
+IV. RESULTS
+------------------------------------------------------------------------
+
+<What was proved or shown. One block per result (BP-05):>
+
+    Result      : <name>
+    File        : Pnn-YYYY-MM-DD-Snn
+    Compiles    : <yes | no>
+    sorry count : <n>
+    Axioms      : <output of #print axioms>
+    Validated   : <statement restated in words; edge cases (BP-06)>
+
+------------------------------------------------------------------------
+V. DISCUSSION
+------------------------------------------------------------------------
+
+<The longest section. One subsection per discussion, following the
+protocol of SP-00, Section V-D.>
+
+A. <The Question, as a Heading>
+
+1) Question: <one sentence, precise enough that it could be wrong>
+2) Artifact: <smallest Lean example; Document ID>
+3) Positions: <who argued what; cite [Pnn-YYYY-MM-DD-C, #nnn]>
+4) Lens: <engineering analogy; SP-00, TABLE IV row>
+5) Breakdown: <where the analogy fails -- required (BP-10)>
+6) Residue: <what stays open; Pnn-OQ-nn>
+
+------------------------------------------------------------------------
+VI. CONCLUSION
+------------------------------------------------------------------------
+
+<One paragraph: what the session established and why it matters.>
+
+------------------------------------------------------------------------
+VII. CRITICAL REVIEW AND BEST PRACTICES
+------------------------------------------------------------------------
+
+A. What Worked
+
+B. What Did Not Work; Errata
+
+<Errors in this or earlier records, by Document ID and section, and
+the revision that corrects each.>
+
+C. Hidden Assumptions
+
+<In the mathematics, in Lean, or in the author's own reasoning.>
+
+D. Best Practices Applied
+
+<BP-nn -- how it was applied here; the evidence.>
+
+E. Prior Work Confirmed, Extended, or Contradicted
+
+<Internal records by Document ID; literature by [n].>
+
+F. Best Practices Proposed
+
+<New candidates, with source. Add to 00_COURSE/BEST_PRACTICES.txt as
+PROPOSED.>
+
+G. Actions
+
+A-01  <Action.>                                     Due: YYYY-MM-DD
+
+------------------------------------------------------------------------
+REFERENCES
+------------------------------------------------------------------------
+
+[1]  <IEEE format, copied by key from 00_COURSE/REFERENCES.txt.
+     State the source's assumptions where it is used (BP-14).>
+
+Internal Records
+
+[DEC-00]            Project declaration.
+                    00_COURSE/DEC-00_DECLARATION.txt
+[Pnn-YYYY-MM-DD-C]  <Title of the chat log.>
+                    Pnn_<NAME>/YYYY-MM-DD/Pnn-YYYY-MM-DD-C.txt
+
+------------------------------------------------------------------------
+FIGURES AND TABLES
+------------------------------------------------------------------------
+
+Fig. 1     <Caption.>
+           fig/Pnn-YYYY-MM-DD-F01_<TITLE>.txt
+TABLE I    <Caption.>
+           tab/Pnn-YYYY-MM-DD-T01_<TITLE>.txt
+
+------------------------------------------------------------------------
+REVISION HISTORY
+------------------------------------------------------------------------
+
+Rev  Date        Change
+A    YYYY-MM-DD  Initial issue.

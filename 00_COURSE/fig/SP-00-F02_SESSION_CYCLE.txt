@@ -1,0 +1,35 @@
+========================================================================
+FIGURE FILE
+------------------------------------------------------------------------
+Figure ID   : SP-00-F02
+Label       : Fig. 2
+Cited in    : SP-00, Section V-C
+Source      : Original; cycle after [ISO-9001] (Plan-Do-Check-Act)
+Revision    : A  2026-11-25
+========================================================================
+
+      +------------------------+          +------------------------+
+      | 1. BEFORE CLASS        |          | 2. IN CLASS            |
+      |    PLAN   (~30 min)    |--------->|    DO                  |
+      |                        |          |                        |
+      | - read the assignment  |          | - raw notes            |
+      | - reread last actions  |          | - raw chat capture     |
+      |   (report Sec. VII-G)  |          | - Lean scratch work    |
+      | - list likely OQ-nn    |          |   in the workspace     |
+      +------------------------+          +------------------------+
+                  ^                                   |
+                  |                                   v
+      +------------------------+          +------------------------+
+      | 4. WEEKLY              |          | 3. AFTER CLASS         |
+      |    ACT    (~30 min)    |<---------|    CHECK  (< 24 h,     |
+      |                        |          |    about 2 h)          |
+      | - best-practice reg.   |          | - edit chat log  (C)   |
+      | - open-question reg.   |          | - write report   (R)   |
+      | - reference register   |          | - critical review      |
+      | - close actions        |          |   (report Sec. VII)    |
+      +------------------------+          +------------------------+
+
+------------------------------------------------------------------------
+Fig. 2. Session cycle as a Plan-Do-Check-Act loop [ISO-9001]. The
+critical review (step 3) feeds the registers (step 4), and the
+registers feed the next session's plan (step 1).

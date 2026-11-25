@@ -1,0 +1,140 @@
+========================================================================
+CHAT LOG, RAW -- PLANNING DISCUSSION AND DECLARATION
+========================================================================
+
+Document ID : P01-2026-11-25-C-RAW
+Date        : 2026-11-25
+Project     : P01 Lean
+Setting     : AI assistant (Claude Code; Claude Opus 5.5 for #002,
+              Claude Fable 5.2 from #004)
+Edited copy : P01-2026-11-25-C.txt
+Declaration : Turn #003 below is the declaration of record (DEC-00).
+Capture     : Student turns copied as typed, including spelling and
+              spacing. Hard-wrapped at column 72 for storage; no other
+              change. NOT TO BE EDITED (SP-00, Section III-F; BP-02).
+              Turns are appended as the session proceeds.
+
+------------------------------------------------------------------------
+
+#001  STUDENT  approx. 10:00 PST
+      I am taking notes for a math profs class. I have done the
+      Electrical Engineer ABIT accreded University. I always write IEEE
+      style reports. And have a section at the end to do critial review,
+      and how I incorporate the lessons of Best Practices and and
+      reference them for prior work. Write this as my study plan. I keep
+      my notes by project and by date. In a folder structure of IEEE
+      storage format. I prefer ASCII text. Line returns. . For tables,
+      reference figures or tables like a picture or an data source
+      reference. We spend most time philosophizing about what this means
+      in the context to the subject we are studying (in this case our
+      first project is Lean). Also . All the discussions have referenced
+      and documented chat histories (spell corrected, even grammar
+      corrected, emphasis on retaining  itt coherent to the point).
+
+#002  AI  approx. 10:00-10:05 PST
+      Not reproduced here. The reply and its file actions are held in
+      the Claude Code session transcript, session
+      3f684c95-b731-4af4-91d9-2235bf448607, stored by Claude Code under
+      ~/.claude/projects/. The same holds for turns #004 and #006.
+
+#003  STUDENT  approx. 10:05-10:15 PST
+      [Capture note: this message was sent three times while the
+      assistant was working, growing each time. The last and fullest
+      version is given. It was pasted with terminal line breaks,
+      removed here. The second sending also contained the sentence
+      "Von Glurt is synonym to Paul Richeson.", which the third did
+      not repeat.]
+
+      I am taking notes for a math profs class. I have done the
+      Electrical Engineer ABIT accreded University. I always write IEEE
+      style reports. And have a section at the end to do critial review,
+      and how I incorporate the lessons of Best Practices and and
+      reference them for prior work. Write this as my study plan. I keep
+      my notes by project and by date. In a folder structure of IEEE
+      storage format. I prefer ASCII text. Line returns. . For tables,
+      reference figures or tables like a picture or an data source
+      reference. We spend most time philosophizing about what this means
+      in the context to the subject we are studying (in this case our
+      first project is Lean). Also . All the discussions have referenced
+      and documented chat histories (spell corrected, even grammar
+      corrected, emphasis on retaining  itt coherent to the point).
+      Create a sylabus of the around 15 hours lecture time (breaks) .
+      and the other workshop time used for individual exploration.
+      During this lecture we are going to take time stamp (please ask
+      for youtube share link if I forget to provide it).
+      https://youtu.be/s9Dyiu4S4vA?t=838 . The first concept to research
+      is from the transcript of this. we can find that beceause we used
+      copal linux and ytq to get transcripts , which is in this case is
+      from the lectures public at the youtube of Tyler Josephson .
+      https://www.youtube.com/@tylerjosephson8860 . in generatl we want
+      questions when we start a new research topic, and this is the best
+      practices (and first example usecase) . We will have lots of
+      things to research and to create a future list of side projects we
+      think about. We want to talk to an audience of super inteligence.
+      Assume all things can be refernced and researched and provide the
+      assumptions in the sources. This is a hybrid of class lecture
+      notes, and philosophical analysis of future implications of future
+      technologies as I research new ways of thinking and applying them
+      to a symbolic notation of a Porff class, but with knowledge that
+      the target audience is one who know circuit theory, Advanced
+      matrix math, complex analysis, partial differential equations,
+      inverse forreiter transforms, laplase transformace, H and S
+      paramters, matrix math with complex analysis. Numbers ,
+      probabalitiies, mechancics, dynamics, mesh analysis, control
+      systems theory, solving systems of equations using control theory
+      of kinesis, and general control systems, PID, and more complex S
+      and lapalse impulse and daltea derac response theory and systems
+      steady state analsyss type engineering analysis. In fact. for
+      pretty much every topic we reaserach we want to consider talking
+      to an expert professor, who needs reminding through source
+      reference material, but we still trust them to fully be capable of
+      understanding the technical precision and its general application
+      use case like an engineer using piece wise analaysis allows
+      classificaion of behaviors into emperical measurements. Keep a
+      copy of this declaration and our chat history, reference them each
+      time we create a published docuemnt. Also. We will often take
+      screen shots, please take them and encode them into files for
+      reference and refer them them, and analyse them. . We will also
+      create a git repo, lets make it at
+      https://github.com/vonglurt/leanengineer . please create a make
+      deploy script to do the needfull. define what that is. we have a
+      way to deploy already, and git credentials already set. Please git
+      init. and set the general declaration of this project, Today, by
+      von glurt on 2026 Nov 26. MIT licened personal class notes of Von
+      Glurt. Create a Readme that describes this proejct , readmes are
+      very short, we referece where to go. and the general purpose. The
+      github account is vonglurt, the person is Paul Richeson. MIT
+      License. Also as a declaration, use this agent to research and
+      think, do not use background agents. Long explorations of research
+      if you need them should be requested for von glurt to make a side
+      research project, and then another agent might be granted
+      permission, but in general, do not spawn background agents, work
+      synchronously and think along with me. I'm here, ready to ready
+      your thoughts, I'm taking notes live so I have time to read your
+      thoughts and confirm desciusions. Although in genral I will accept
+      your recomendations so try to front load the questions because I
+      will generally pick the logical best use case for an engineer.
+
+#004  AI  approx. 10:16 PST
+      Not reproduced here; see #002. Four questions were put to the
+      student in a dialog: the date of record; how to obtain the
+      lecture transcript; where third-party material is stored; and
+      whether to commit and deploy at the end of the session.
+
+#005  STUDENT  approx. 10:17 PST
+      [Dialog answer to the question on the date of record:]
+      2026-11-25 per the clock
+      [The other three questions were left unanswered; the student
+      chose to clarify instead, and then wrote:]
+      the transcripts are in ~/Downlaods/SharedVM/TyloerJosephson*. with
+      a wildcard match to the youtube hash. See the txt file.
+
+#006  AI  approx. 10:17-11:00 PST
+      Not reproduced here; see #002.
+
+#007  STUDENT  after #006
+      next topic. https://youtu.be/s9Dyiu4S4vA?t=4094 lean allows for
+      profs using real numbers, yet not floating point errors.
+
+#008  AI  after #007
+      Not reproduced here; see #002.

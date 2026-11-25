@@ -1,0 +1,412 @@
+========================================================================
+MASTER REFERENCE REGISTER
+========================================================================
+
+Document ID : REFERENCES
+Revision    : C
+Date        : 2026-11-25 (living register)
+Declaration : DEC-00 (rule R-02)
+Governed by : SP-00, Section III-E
+File        : 00_COURSE/REFERENCES.txt
+
+------------------------------------------------------------------------
+HOW TO USE
+------------------------------------------------------------------------
+
+Each source is formatted once here, in IEEE style, under a permanent
+KEY. A report copies the entry into its own reference list and numbers
+it [1], [2], ... in order of first citation. Figure and table files
+cite by [KEY].
+
+Status values:
+  UNVERIFIED  Not yet checked against the source. Do not quote a page,
+              title, or claim from it until it is checked.
+  VERIFIED    Checked against the source; access date recorded.
+  SUPERSEDED  A newer edition or revision exists; see Notes.
+
+Every entry of Revision A was compiled on 2026-11-25 with the help of
+an AI assistant, from its training knowledge, without opening the
+sources (SP-00, Section IX-B; BP-03; action SP-00/A-02). Entries
+added in Revision B state individually how they were checked.
+
+Each entry also records what the source assumes (DEC-00, R-02;
+BP-14). "Assumes : --" means not yet recorded; it is filled in when
+the source is verified or first used in an argument.
+
+Entry form:
+
+  KEY        :
+  Entry      : <IEEE format>
+  Status     :
+  Accessed   : <Mon. DD, YYYY, for online sources>
+  Cited in   : <Document ID [n]>
+  Assumes    : <what the source takes for granted>
+  Notes      :
+
+------------------------------------------------------------------------
+ENTRIES (alphabetical by key)
+------------------------------------------------------------------------
+
+KEY        : ABET-EAC
+Entry      : ABET, "Criteria for accrediting engineering programs,"
+             ABET, Baltimore, MD, USA. [Online]. Available:
+             https://www.abet.org/accreditation/accreditation-criteria/
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [1]
+Assumes    : --
+Notes      : Add the accreditation cycle (e.g., 2025-2026) when
+             verified. Student Outcome 7 is quoted in SP-00 I-C.
+
+KEY        : BARENDREGT05
+Entry      : H. Barendregt and F. Wiedijk, "The challenge of computer
+             mathematics," Phil. Trans. R. Soc. A, vol. 363,
+             no. 1835, pp. 2351-2375, Oct. 2005.
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [11]
+Assumes    : --
+Notes      : Source for the de Bruijn criterion and the cost of
+             formalization.
+
+KEY        : COE95
+Entry      : T. Coe, T. Mathisen, C. Moler, and V. Pratt,
+             "Computational aspects of the Pentium affair," IEEE
+             Comput. Sci. Eng., vol. 2, no. 1, pp. 18-30, 1995.
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [20]
+Assumes    : --
+Notes      : The FDIV case.
+
+KEY        : DIJKSTRA72
+Entry      : E. W. Dijkstra, "Notes on structured programming," in
+             Structured Programming, O.-J. Dahl, E. W. Dijkstra, and
+             C. A. R. Hoare. London, U.K.: Academic Press, 1972,
+             pp. 1-82.
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [21]
+Assumes    : --
+Notes      : Locate the page of the "presence of bugs" quotation
+             before quoting it with a page number.
+
+KEY        : FLOCQ11
+Entry      : S. Boldo and G. Melquiond, "Flocq: A unified library for
+             proving floating-point algorithms in Coq," in Proc. 20th
+             IEEE Symp. Computer Arithmetic (ARITH), Tuebingen,
+             Germany, 2011, pp. 243-252.
+Status     : UNVERIFIED (compiled from memory)
+Accessed   : --
+Cited in   : P01-2026-11-25-RT02 [4]
+Assumes    : --
+Notes      : A formal model of floating point in another proof
+             assistant. Whether Lean has an equivalent is the first
+             question of SIDE-01.
+
+KEY        : FPIL
+Entry      : D. T. Christiansen, Functional Programming in Lean.
+             [Online]. Available:
+             https://lean-lang.org/functional_programming_in_lean/
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [4]
+Assumes    : --
+Notes      : Cite chapters by title.
+
+KEY        : GEUVERS09
+Entry      : H. Geuvers, "Proof assistants: History, ideas and future,"
+             Sadhana, vol. 34, no. 1, pp. 3-25, Feb. 2009.
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [10]
+Assumes    : --
+Notes      : --
+
+KEY        : HALES08
+Entry      : T. C. Hales, "Formal proof," Notices Amer. Math. Soc.,
+             vol. 55, no. 11, pp. 1370-1380, Dec. 2008.
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [12]
+Assumes    : --
+Notes      : --
+
+KEY        : HIGHAM02
+Entry      : N. J. Higham, Accuracy and Stability of Numerical
+             Algorithms, 2nd ed. Philadelphia, PA, USA: SIAM, 2002.
+Status     : UNVERIFIED (compiled from memory)
+Accessed   : --
+Cited in   : P01-2026-11-25-RT02 [3]
+Assumes    : The standard model fl(a op b) = (a op b)(1 + d),
+             |d| <= u, holds barring overflow and underflow.
+Notes      : Locate the chapter and equation of the standard model
+             before citing it by number.
+
+KEY        : HOWARD80
+Entry      : W. A. Howard, "The formulae-as-types notion of
+             construction," in To H. B. Curry: Essays on Combinatory
+             Logic, Lambda Calculus and Formalism, J. P. Seldin and
+             J. R. Hindley, Eds. London, U.K.: Academic Press, 1980,
+             pp. 479-490.
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [8]
+Assumes    : --
+Notes      : --
+
+KEY        : IEEE-1012
+Entry      : IEEE Standard for System, Software, and Hardware
+             Verification and Validation, IEEE Std 1012-2016.
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [13]
+Assumes    : --
+Notes      : Check whether a later revision has superseded 2016.
+
+KEY        : IEEE-754
+Entry      : IEEE Standard for Floating-Point Arithmetic, IEEE Std
+             754-2019.
+Status     : UNVERIFIED (compiled from memory)
+Accessed   : --
+Cited in   : P01-2026-11-25-RT02 [2]
+Assumes    : --
+Notes      : Formats, rounding, and special values (infinities, NaN,
+             signed zero).
+
+KEY        : IEEE-REF
+Entry      : IEEE Reference Guide. Piscataway, NJ, USA: IEEE.
+             [Online]. Available:
+             https://journals.ieeeauthorcenter.ieee.org/
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [17]
+Assumes    : --
+Notes      : Record the guide's own date and the exact URL of the PDF
+             when verified.
+
+KEY        : ISO-15289
+Entry      : Systems and Software Engineering -- Content of Life-Cycle
+             Information Items (Documentation), ISO/IEC/IEEE
+             15289:2019.
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [14]
+Assumes    : --
+Notes      : Check for a later revision.
+
+KEY        : ISO-9001
+Entry      : Quality Management Systems -- Requirements, ISO 9001:2015.
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [15]
+Assumes    : --
+Notes      : PDCA is described in the introduction; control of
+             documented information in clause 7.5. Check for a later
+             revision.
+
+KEY        : JOSEPHSON25-L01
+Entry      : T. Josephson, "Lean for Scientists and Engineers, Summer
+             2024 - Lecture 1," YouTube, Jan. 3, 2025. [Online Video].
+             Available: https://www.youtube.com/watch?v=s9Dyiu4S4vA
+Status     : VERIFIED (title and channel by YouTube oEmbed; date,
+             duration 2:01:54, chapters, and description from the
+             transcript file's metadata)
+Accessed   : Nov. 25, 2026
+Cited in   : P01-SYL [2]; P01-2026-11-25-RT01 [1]; SP-00 [22];
+             P01-2026-11-25-RT02 [1]
+Assumes    : See P01-2026-11-25-RT01, Section II (S1 to S7), and
+             P01-2026-11-25-RT02, Section II (S1 to S7).
+Notes      : Captions are automatic, not verbatim. The transcript has
+             no timestamps within a chapter. License not stated.
+             Local copy: 99_LOCAL/transcripts/*_s9Dyiu4S4vA.txt
+
+KEY        : JOSEPHSON25-LFSE
+Entry      : T. Josephson, "Lean for Scientists and Engineers, Summer
+             2024," lecture series, 11 videos, YouTube, 2025.
+             [Online]. Available:
+             https://www.youtube.com/@tylerjosephson8860
+Status     : VERIFIED (eleven lecture titles and video IDs from the
+             channel listing; running times from the video files)
+Accessed   : Nov. 25, 2026
+Cited in   : DEC-00 [1]; P01-SYL [1]
+Assumes    : Audience of scientists and engineers who are not
+             mathematicians; a prerequisite is recommended in the
+             series description.
+Notes      : Video IDs: P01-SYL, TABLE I, note d. Publication dates
+             recorded for L01 (Jan. 3, 2025) and L02 (Jan. 10, 2025)
+             only.
+
+KEY        : KANARE85
+Entry      : H. M. Kanare, Writing the Laboratory Notebook. Washington,
+             DC, USA: American Chemical Society, 1985.
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [16]
+Assumes    : --
+Notes      : --
+
+KEY        : LEAN4-CADE21
+Entry      : L. de Moura and S. Ullrich, "The Lean 4 theorem prover and
+             programming language," in Automated Deduction -- CADE 28
+             (Lecture Notes in Computer Science, vol. 12699),
+             A. Platzer and G. Sutcliffe, Eds. Cham, Switzerland:
+             Springer, 2021, pp. 625-635.
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [2]
+Assumes    : --
+Notes      : --
+
+KEY        : LFSE24-REPO
+Entry      : ATOMS Lab, "LFSE2024," GitHub repository. [Online].
+             Available: https://github.com/ATOMSLab/LFSE2024
+Status     : UNVERIFIED (address taken from the description of
+             JOSEPHSON25-L01; repository not opened)
+Accessed   : --
+Cited in   : P01-SYL [3]
+Assumes    : --
+Notes      : Said to hold the slides and Lean code. Record its Lean
+             and Mathlib versions (P01-SYL/A-03).
+
+KEY        : LFSE24-SCHED
+Entry      : T. Josephson, "Lean for Scientists and Engineers 2024,"
+             course schedule, shared spreadsheet. [Online]. Available:
+             https://docs.google.com/spreadsheets/d/
+             1ATL-RngI3IGM6uM1ZkXxQdZzYLOAxSn5ZN0MBrfq--o
+Status     : VERIFIED (opened; dates, topics, and readings copied
+             into P01-SYL, TABLE I)
+Accessed   : Nov. 25, 2026
+Cited in   : P01-SYL [9]
+Assumes    : Sessions of two hours, 1-3 pm Eastern, July 9 to
+             August 21, 2024.
+Notes      : Found by web search; authorship inferred from content.
+             Its recording links are to the original web-conference
+             recordings, not to YouTube.
+
+KEY        : MATHLIB-CPP20
+Entry      : The mathlib Community, "The Lean mathematical library," in
+             Proc. 9th ACM SIGPLAN Int. Conf. Certified Programs and
+             Proofs (CPP), New Orleans, LA, USA, 2020, pp. 367-381.
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [6]
+Assumes    : --
+Notes      : Describes the Lean 3 library; Mathlib has since been
+             ported to Lean 4.
+
+KEY        : MATHLIB-START
+Entry      : Lean Prover Community, "Getting started." [Online].
+             Available:
+             https://leanprover-community.github.io/get_started.html
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [18]
+Assumes    : --
+Notes      : Use the current page for install and project-creation
+             commands; do not copy commands from memory.
+
+KEY        : MATHLIB-STYLE
+Entry      : Lean Prover Community, "Library style guidelines" and
+             "Naming conventions." [Online]. Available:
+       https://leanprover-community.github.io/contribute/style.html
+       and https://leanprover-community.github.io/contribute/naming.html
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [19]
+Assumes    : --
+Notes      : --
+
+KEY        : MIL
+Entry      : J. Avigad and P. Massot, Mathematics in Lean. [Online].
+             Available:
+             https://leanprover-community.github.io/mathematics_in_lean/
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [5]
+Assumes    : --
+Notes      : Cite chapters by title.
+
+KEY        : MOP
+Entry      : H. Macbeth, The Mechanics of Proof. [Online]. Available:
+             https://hrmacbeth.github.io/math2001/
+Status     : UNVERIFIED (title and address as given in LFSE24-SCHED)
+Accessed   : --
+Cited in   : P01-SYL [4]
+Assumes    : --
+Notes      : Main text for lectures L01 to L05.
+
+KEY        : NNG4
+Entry      : K. Buzzard et al., Natural Number Game (Lean 4 version).
+             [Online]. Available:
+             https://adam.math.hhu.de/#/g/leanprover-community/nng4
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [7]
+Assumes    : --
+Notes      : Confirm the author list for the Lean 4 version.
+
+KEY        : OPPENHEIM10
+Entry      : A. V. Oppenheim and R. W. Schafer, Discrete-Time Signal
+             Processing, 3rd ed. Upper Saddle River, NJ, USA: Pearson,
+             2010.
+Status     : UNVERIFIED (compiled from memory)
+Accessed   : --
+Cited in   : P01-2026-11-25-RT02 [5]
+Assumes    : Round-off modeled as additive white noise, uncorrelated
+             with the signal, of variance q^2/12 per quantizer.
+Notes      : Locate the chapter on finite-precision effects before
+             citing it by section.
+
+KEY        : SCIL
+Entry      : T. Skrivan, Scientific Computing in Lean. [Online].
+             Available:
+             https://lecopivo.github.io/scientific-computing-lean/
+Status     : UNVERIFIED (title and address as given in LFSE24-SCHED)
+Accessed   : --
+Cited in   : P01-SYL [8]
+Assumes    : --
+Notes      : Text for lecture L11 (SciLean).
+
+KEY        : SELSAM17
+Entry      : D. Selsam, P. Liang, and D. L. Dill, "Developing bug-free
+             machine learning systems with formal mathematics," in
+             Proc. 34th Int. Conf. Machine Learning (ICML), Sydney,
+             NSW, Australia, 2017, pp. 3047-3056.
+Status     : UNVERIFIED (compiled from memory; the lecturer names a
+             2017 paper of this title in L01 after 16:25)
+Accessed   : --
+Cited in   : --
+Assumes    : --
+Notes      : Named in L01 as a source of the lecturer's vision.
+             Candidate source for a later research topic.
+
+KEY        : TPIL4
+Entry      : J. Avigad, L. de Moura, S. Kong, and S. Ullrich, Theorem
+             Proving in Lean 4. [Online]. Available:
+             https://lean-lang.org/theorem_proving_in_lean4/
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [3]
+Assumes    : --
+Notes      : Cite chapters by title; numbering differs between
+             editions.
+
+KEY        : WADLER15
+Entry      : P. Wadler, "Propositions as types," Commun. ACM, vol. 58,
+             no. 12, pp. 75-84, Dec. 2015.
+Status     : UNVERIFIED
+Accessed   : --
+Cited in   : SP-00 [9]
+Assumes    : --
+Notes      : --
+
+------------------------------------------------------------------------
+REVISION HISTORY
+------------------------------------------------------------------------
+
+Rev  Date        Change
+A    2026-11-25  Register opened with the 21 sources of SP-00 Rev A.
+B    2026-11-25  Assumes field added (DEC-00, R-02); seven sources
+                 added for the lecture series and syllabus.
+C    2026-11-25  Four sources added for RT-02.

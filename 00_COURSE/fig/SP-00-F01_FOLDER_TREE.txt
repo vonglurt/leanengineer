@@ -1,0 +1,56 @@
+========================================================================
+FIGURE FILE
+------------------------------------------------------------------------
+Figure ID   : SP-00-F01
+Label       : Fig. 1
+Cited in    : SP-00, Section III-A
+Source      : Original
+Revision    : B  2026-11-25
+========================================================================
+
+leanengineer/                         Notebook root (git repository)
+|-- README.txt                        Purpose, and where to go
+|-- LICENSE                           MIT
+|-- Makefile                          check, sources, shot, deploy
+|-- 00_COURSE/                        Course level: all projects
+|   |-- DEC-00_DECLARATION.txt        Purpose, audience, standing rules
+|   |-- SP-00_STUDY_PLAN.txt          Governing study plan
+|   |-- REFERENCES.txt                Master reference register (keys)
+|   |-- BEST_PRACTICES.txt            Best-practice register (BP-nn)
+|   |-- RESEARCH_TOPICS.txt           Research-topic register (RT-nn)
+|   |-- SIDE_PROJECTS.txt             Side-project register (SIDE-nn)
+|   |-- fig/                          Figures of SP-00 (F01, F02)
+|   `-- tab/                          Tables of SP-00 (T01 to T04)
+|-- 01_TEMPLATES/                     Blank forms: copy, never edit
+|   |-- TPL_SESSION_REPORT.txt
+|   |-- TPL_CHAT_LOG.txt
+|   |-- TPL_FIGURE.txt
+|   `-- TPL_TABLE.txt
+|-- P01_LEAN/                         Project P01: Lean
+|   |-- P01_INDEX.txt                 Sessions, open questions, actions
+|   |-- P01-SYL_SYLLABUS.txt          Lectures and time budget
+|   |-- tab/                          Project tables (P01-SYL-T01)
+|   |-- lean/                         Lake workspace (Section III-H)
+|   |   `-- .../S20261125_01.lean     Session sources (Pnn-...-Snn)
+|   |-- 2026-11-25/                   Planning session (no class)
+|   |   |-- P01-2026-11-25-C-RAW.txt  Chat log, raw (never edited)
+|   |   |-- P01-2026-11-25-C.txt      Chat log, edited (cited)
+|   |   |-- P01-2026-11-25-RT01_...   Research topic, opening note
+|   |   `-- fig/                      P01-2026-11-25-F01_...
+|   `-- YYYY-MM-DD/                   A class session, full set:
+|       |-- P01-YYYY-MM-DD-R.txt      Session report
+|       |-- P01-YYYY-MM-DD-C-RAW.txt  Chat log, raw
+|       |-- P01-YYYY-MM-DD-C.txt      Chat log, edited
+|       |-- fig/                      P01-YYYY-MM-DD-F01_<TITLE>.txt
+|       `-- tab/                      P01-YYYY-MM-DD-T01_<TITLE>.txt
+|-- P02_<NAME>/                       Next project, same pattern
+`-- 99_LOCAL/                         NOT PUBLISHED (.gitignore)
+    |-- transcripts/                  Lecture transcripts (third party)
+    `-- frames/                       Video frames, <id>_t<sec>.png
+
+------------------------------------------------------------------------
+Fig. 1. Notebook folder structure, by project and by date. The
+course-level registers sit above the projects so that lessons carry
+from one project to the next. The lean/ workspace does not exist until
+action SP-00/A-03 is done. 99_LOCAL/ holds third-party material and is
+excluded from the published repository.

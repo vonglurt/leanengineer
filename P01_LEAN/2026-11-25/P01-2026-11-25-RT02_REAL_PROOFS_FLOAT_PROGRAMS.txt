@@ -1,0 +1,421 @@
+========================================================================
+       RESEARCH TOPIC RT-02 -- OPENING NOTE
+       What Does a Proof over the Reals Say about a Program
+       Run in Floating Point?
+========================================================================
+
+Document ID : P01-2026-11-25-RT02
+Revision    : A
+Date        : 2026-11-25
+Project     : P01 Lean
+Topic       : RT-02 (00_COURSE/RESEARCH_TOPICS.txt)
+Author      : Von Glurt, with AI assistant (Claude Code)
+Declaration : DEC-00
+Chat record : [P01-2026-11-25-C, #007-#008]
+Lecture     : [L01 @ 1:08:14]  https://youtu.be/s9Dyiu4S4vA?t=4094
+              Chapter "Programming case studies", 1:04:38 to 1:10:12;
+              and the last question of the lecture, after 1:40:50 [1]
+Status      : OPEN -- questions posed; preliminary analysis by the
+              assistant; the author's positions not yet recorded
+Toolchain   : none; Lean examples below are UNVERIFIED (A-01)
+File        : P01_LEAN/2026-11-25/
+              P01-2026-11-25-RT02_REAL_PROOFS_FLOAT_PROGRAMS.txt
+
+------------------------------------------------------------------------
+
+Abstract--The author's statement of the topic is: Lean allows proofs
+using real numbers, yet not [proofs about] floating-point errors.
+The lecture proposes to bridge the two with one polymorphic function,
+proved at the real numbers and executed at floating-point numbers.
+This note records the claim and its assumptions, poses the opening
+questions, and gives a preliminary analysis. The analysis separates
+three layers -- the theory is correct, the code is the theory, the
+code is numerically close -- and finds that the bridge secures the
+second layer and leaves the third unproved. For the reader of DEC-00
+the third layer is tolerance analysis, and the open problem is to
+state it as a theorem.
+
+Index Terms--floating point, real numbers, round-off error,
+polymorphism, error analysis, quantization, Lean 4.
+
+------------------------------------------------------------------------
+I. SOURCE AND CLAIM
+------------------------------------------------------------------------
+
+The slide on screen at 1:08:14, "Bug-Free BET Analysis", is
+transcribed and analyzed in Fig. 1
+[file: fig/P01-2026-11-25-F02_L01_BET_SLIDE.txt]. It shows a
+data-analysis pipeline and four proofs proposed about it. The claim
+of this topic is spoken over that slide. From the automatic
+captions [1], which are not verbatim:
+
+    "we can write proofs in real numbers. We can't write proofs, the
+    same proofs about floating point numbers. If A and B are floating
+    points, I cannot say A + B - B is equal to A. [...] And all of
+    this stuff will be proofs about real numbers. And we use
+    polymorphic functions. [...] we can use this to sort of bridge
+    the realm of computing and the realm of proofs."
+
+At the close of the lecture a student asks whether, since the proof
+is about reals and the program uses floating point, a subset of the
+reals should be used instead. The lecturer's answer, condensed from
+the captions [1]:
+
+1) No; it is harder to prove things about such a subset.
+2) Floating-point numbers are a subset of the reals, and in fact of
+   the rationals.
+3) A function on floating-point numbers will not give the same answer
+   as the function on reals; a square root has infinitely many digits
+   in one and not in the other.
+4) Programs must be executable to be useful. The guarantee offered is
+   that the same function is used in both realms. The proofs hold for
+   the reals; "those proofs don't hold" for the same function on
+   floating-point numbers.
+
+The author's statement of the topic [P01-2026-11-25-C, #007]: Lean
+allows proofs using real numbers, yet not floating-point errors.
+
+------------------------------------------------------------------------
+II. ASSUMPTIONS IN THE SOURCE
+------------------------------------------------------------------------
+
+Stated by the lecturer:
+
+S1  Proofs are about real numbers only.
+S2  The link between proof and program is identity of the function's
+    text, by polymorphism -- not a proved bound on the difference of
+    results.
+S3  Bounding floating-point error is possible in principle and is
+    left to others ("That's not what we're focused on", in the
+    chapter "Types of errors"; see RT-01, S1).
+
+Not stated, but required (author's reading):
+
+S4  The floating-point result is close enough to the real result for
+    the scientific purpose. Nothing in the method establishes this.
+S5  The program's control flow is the same in both realms: no
+    comparison comes out differently in floating point than it would
+    over the reals.
+S6  "Subset of the reals" refers to finite floating-point values. The
+    IEEE 754 format [2] also has infinities, NaN, and a signed zero,
+    which are not real numbers.
+
+About this record:
+
+S7  The captions are machine-generated and not verbatim [1].
+
+------------------------------------------------------------------------
+III. OPENING QUESTIONS
+------------------------------------------------------------------------
+
+Q1  Definition. Stated as a theorem, what does a proof about the real
+    instance of a function guarantee about its floating-point
+    instance?
+
+Q2  Mechanism. How does one definition serve as both a real function
+    to prove about and a floating-point function to run?
+
+Q3  Conditions. What must be added for a real-number theorem to yield
+    a floating-point statement, and what form does that statement
+    take?
+
+Q4  Scope. Where is the gap not small: cancellation, loss of
+    associativity, comparisons and branches, iteration counts, the
+    special values of S6?
+
+Q5  Dispute. The student asks for "a subset of the reals" to compute
+    with. The answer given is no. What are the candidates, and what
+    does each cost?
+
+Q6  Lens. Which engineering practice already manages an ideal design
+    realized with imperfect arithmetic, and where does the comparison
+    fail?
+
+Q7  Cost. What does a proved error bound cost, compared with a proof
+    over the reals alone? When is it worth it?
+
+Q8  Implication. When a scientific result is "proved" over the reals
+    and computed in floating point, what may the paper claim?
+
+Q9  Refutation. What is the smallest function, proved correct over
+    the reals, whose floating-point instance is qualitatively wrong?
+
+------------------------------------------------------------------------
+IV. PRELIMINARY ANALYSIS
+------------------------------------------------------------------------
+
+This section is the assistant's reasoning, offered for the author's
+judgment. It is not yet the author's position.
+
+A. On Q1: Three Layers
+
+Let f be the function, f_R its instance at the reals, and f_F its
+instance at floating-point numbers. Three separate claims are in
+play.
+
+  Layer 1  The theory is correct:    f_R has the stated property.
+  Layer 2  The code is the theory:   f_F and f_R are one definition.
+  Layer 3  The code is close:        f_F(x) is near f_R(x).
+
+The lecture proves layer 1 and obtains layer 2 by construction.
+Layer 3 is assumption S4. The answer to Q1 as the method stands is
+therefore: about the floating-point values, nothing. What is
+guaranteed is that no transcription error separates the formula
+proved from the formula run -- which removes the semantic errors of
+RT-01 (a wrong sign, transposed indices) and no numerical error.
+
+B. On Q2 and Q9: The Mechanism, and the Smallest Counterexample
+
+A definition written over an arbitrary type that has the needed
+operations can be used at any such type:
+
+    def f {A : Type} [Add A] [Sub A] (a b : A) : A := a + b - b
+
+    theorem f_real (a b : Real) : f a b = a := by simp [f]
+
+    #eval f (1.0 : Float) 1e16        -- expected output: 0.000000
+
+Near 1e16 adjacent double-precision values are 2 apart, so 1 + 1e16
+rounds back to 1e16 and the result is 0, not 1. The theorem is true,
+the program is the same text, and the answer is wrong by 100
+percent. This is the lecturer's own example, a + b - b, made
+concrete, and it answers Q9. The real instance is for proving, not
+for running; what Lean does when asked to evaluate it is to be
+checked (A-01).
+
+C. On the "Subset" Remark: A Subset, but Not a Substructure
+
+The finite floating-point numbers F are a subset of the rationals.
+But floating-point addition is not the addition of the reals
+restricted to F. It is real addition followed by rounding:
+
+        a (+) b  =  rnd(a + b)                                   (1)
+
+F is not closed under real addition, and the operation (+) is not
+associative. So no theorem about the field of reals restricts to F:
+F with its own operations is not a subfield, or even a ring. This is
+the precise sense in which "the same proofs" cannot be written, and
+it is why "subset of the reals" is true of the values and misleading
+about the arithmetic.
+
+D. On Q3: The Form of a Layer-3 Statement
+
+The standard model of floating-point arithmetic [3] states, for each
+basic operation and barring overflow and underflow,
+
+        fl(a op b)  =  (a op b)(1 + d),     |d| <= u             (2)
+
+with u = 2^-53 in double precision, rounding to nearest [2]. A
+layer-3 statement is then a bound
+
+        | f_F(x) - f_R(x) |  <=  e(x)                            (3)
+
+derived by carrying (2) through every operation of f. Statement (3)
+is a theorem about real numbers -- the d's are real -- so it can be
+stated and proved in Lean over the reals. What it needs is (2) as a
+hypothesis about the machine, taken on trust or from a formal model
+of IEEE 754 arithmetic. Such models exist for other proof assistants
+[4]; what exists for Lean is not known to this note (SIDE-01).
+
+E. On Q4: Where the Gap Is Not Small
+
+1) Cancellation: subtracting nearly equal quantities, as in B.
+2) Comparisons. If f contains "if x < y", the two instances can take
+   different branches, and then (3) fails without warning: assumption
+   S5. Over the reals a comparison is not even computable in general,
+   so a function with a branch does not instantiate at both types
+   without extra machinery. In Fig. 1 the unproved pipeline step,
+   filtering to the "BET regime", is exactly such a comparison.
+3) Iteration: a loop that runs "until converged" may run a different
+   number of times, or not stop.
+4) The special values of S6.
+
+F. On Q5: The Candidates for "a Subset"
+
+1) Rationals. Exact and executable; closed under the field
+   operations, so the real theorems about +, -, *, / do apply. No
+   square roots, and numerators and denominators grow without bound.
+2) Intervals. Compute with enclosures [lo, hi] in floating point,
+   rounded outward; prove once that the real result lies inside.
+   Layer 3 is then carried by the data type. Cost: intervals widen.
+3) Floating point with a formal model and bound (3). The full
+   answer; the most proof effort.
+4) The lecture's choice: floating point, layer 3 unproved.
+
+The lecturer's "no" is a choice of 4 over 1 to 3 on grounds of cost,
+which is defensible for a first course and is an engineering
+decision, not a mathematical necessity.
+
+G. On Q6: Lens for the Reader of DEC-00, Section III-A
+
+1) Tolerance analysis. Equation (2) says each arithmetic operation is
+   an ideal operation followed by a gain of (1 + d), with d inside a
+   tolerance band of 1.1e-16. A computation is a network of ideal
+   components each with a gain tolerance, and (3) is its worst-case
+   tolerance analysis. Conditioning is sensitivity: an
+   ill-conditioned problem is a high-Q network, in which a small
+   component error moves the response a long way.
+
+   Where it breaks: component tolerances are independent and random
+   from unit to unit; the d's are deterministic, repeat exactly on
+   every run, and are correlated with the signal. Statistical
+   (root-sum-square) tolerancing therefore has no warrant here; only
+   the worst case is a theorem.
+
+2) Common-mode rejection. Computing a + b - b with b >> a is a
+   differential measurement of a small signal on a large common-mode
+   level: the answer is limited by the rejection ratio, here the 53
+   bits of the significand. The remedy is the same in both fields:
+   rearrange so that the large quantity never has to be subtracted.
+
+3) Fixed-point filters. A filter designed as H(z) over the reals and
+   built with quantized coefficients and quantized products has
+   three distinct departures from the design [5]: poles moved by
+   coefficient quantization (a different linear system); round-off
+   noise, modeled as an additive source of variance q^2/12 at each
+   multiplier and shaped by the transfer function from that node to
+   the output; and limit cycles (a nonlinear effect the linear model
+   cannot show). The noise model is a layer-3 statement that the
+   field accepts without proof. Layers 1 and 2 correspond to "the
+   schematic is right": the proof verifies the schematic, not the
+   board.
+
+   Where it breaks: the noise model is statistical and empirical;
+   (3) is deterministic and proved. The limit cycle corresponds to
+   the branch problem of E-2, where neither model holds.
+
+H. Preliminary Position
+
+The author's statement is accurate as a description of the lecture's
+method and too strong as a description of Lean. Lean allows proofs
+over the reals; the lecture's method proves nothing about
+floating-point error; but a floating-point error bound of form (3)
+is itself a real-number statement and nothing prevents its being
+proved in Lean, given a model of the arithmetic. The gap is a missing
+library and a cost, not a limit of the logic.
+
+------------------------------------------------------------------------
+V. SIDE PROJECTS SUGGESTED
+------------------------------------------------------------------------
+
+SIDE-01, already registered (proved bounds on floating-point
+round-off in Lean), is given a first concrete target by this note:
+state and prove bound (3) for a + b - b, then for a first-order
+recursive filter. No new side project is entered.
+
+------------------------------------------------------------------------
+VI. CRITICAL REVIEW AND BEST PRACTICES
+------------------------------------------------------------------------
+
+A. What Worked
+
+Taking the frame first showed that the slide and the spoken claim
+differ: the slide never mentions floating point. Asking Q1 as "state
+it as a theorem" forced the three layers apart.
+
+B. What Did Not Work; Errata
+
+1) The Lean example is unverified, and needs Mathlib for Real (A-01).
+2) References [2] to [5] are from memory and UNVERIFIED (A-03).
+3) No claim is made here about what Lean or Mathlib already provide
+   for floating point, because it was not researched; under DEC-00,
+   R-06, that survey is the first step of SIDE-01, not session work.
+4) Erratum to RT-01: none. RT-01, S1, set this subject aside; this
+   note takes it up.
+
+C. Hidden Assumptions
+
+In the source: S4 and S5. In this note: that Lean's Float is IEEE 754
+double precision and behaves on the author's machine as in IV-B; to
+be confirmed by running it (A-01).
+
+D. Best Practices Applied
+
+BP-13  Questions before conclusions: Section III precedes IV.
+BP-14  Source assumptions stated: Section II.
+BP-15  Timestamped link and transcribed frame: header and Fig. 1.
+BP-10  Each analogy bounded: Section IV-G, "Where it breaks".
+BP-06  Statement validated: Q1 and the three layers.
+BP-03  New references marked UNVERIFIED.
+BP-17  DEC-00 and the chat record cited in the header.
+
+E. Prior Work Confirmed, Extended, or Contradicted
+
+Extends [P01-2026-11-25-RT01]: its excluded fourth category of error
+is the subject here, and its relocation argument recurs -- there the
+residual error moved into the specification, here it moves into
+layer 3. Extends SP-00, P01-OQ-04 (verified, but valid?).
+
+F. Best Practices Proposed
+
+BP-18 (PROPOSED): when a source makes a guarantee, restate it as a
+theorem before discussing it. Source: this note, Section VI-A.
+
+G. Actions
+
+A-01  Run the example of IV-B in the editor; record the output and
+      what Lean does with the real instance.     Due: session S01
+A-02  Record the author's positions on Q1 to Q9, and on the
+      preliminary position of IV-H.              Due: session S01
+A-03  Verify references [2] to [5].              Due: with SP-00/A-02
+A-04  Check the quotations against the audio near 1:07:30 to
+      1:09:00, and the closing question near 1:58:00 to 2:01:54.
+                                                 Due: session S01
+A-05  Decide whether to approve SIDE-01.         Due: author
+A-06  Add tolerance-analysis and common-mode rows to SP-00,
+      TABLE IV.                                  Due: SP-00 Rev C
+
+------------------------------------------------------------------------
+REFERENCES
+------------------------------------------------------------------------
+
+[1]  T. Josephson, "Lean for Scientists and Engineers, Summer 2024 -
+     Lecture 1," YouTube, Jan. 3, 2025. [Online Video]. Available:
+     https://www.youtube.com/watch?v=s9Dyiu4S4vA
+     Slide at 1:08:14; chapters "Programming case studies" and
+     "Logic and examples".   (JOSEPHSON25-L01; VERIFIED)
+
+[2]  IEEE Standard for Floating-Point Arithmetic, IEEE Std 754-2019.
+     (IEEE-754; UNVERIFIED)
+
+[3]  N. J. Higham, Accuracy and Stability of Numerical Algorithms,
+     2nd ed. Philadelphia, PA, USA: SIAM, 2002.
+     (HIGHAM02; UNVERIFIED)
+
+[4]  S. Boldo and G. Melquiond, "Flocq: A unified library for proving
+     floating-point algorithms in Coq," in Proc. 20th IEEE Symp.
+     Computer Arithmetic (ARITH), Tuebingen, Germany, 2011,
+     pp. 243-252.   (FLOCQ11; UNVERIFIED)
+
+[5]  A. V. Oppenheim and R. W. Schafer, Discrete-Time Signal
+     Processing, 3rd ed. Upper Saddle River, NJ, USA: Pearson, 2010.
+     (OPPENHEIM10; UNVERIFIED)
+
+Internal Records
+
+[DEC-00]               Project declaration.
+                       00_COURSE/DEC-00_DECLARATION.txt
+[SP-00]                Study plan, Rev B. P01-OQ-04; TABLE IV.
+                       00_COURSE/SP-00_STUDY_PLAN.txt
+[P01-2026-11-25-RT01]  Research topic RT-01, opening note.
+                       P01_LEAN/2026-11-25/
+[P01-2026-11-25-C]     Planning discussion and declaration, chat log.
+                       P01_LEAN/2026-11-25/P01-2026-11-25-C.txt
+
+Local source (not published; DEC-00, R-10):
+99_LOCAL/transcripts/, file matching *_s9Dyiu4S4vA.txt
+
+------------------------------------------------------------------------
+FIGURES AND TABLES
+------------------------------------------------------------------------
+
+Fig. 1     Slide "Bug-Free BET Analysis", L01 at 1:08:14, transcribed
+           and analyzed.
+           fig/P01-2026-11-25-F02_L01_BET_SLIDE.txt
+
+------------------------------------------------------------------------
+REVISION HISTORY
+------------------------------------------------------------------------
+
+Rev  Date        Change
+A    2026-11-25  Initial issue.

@@ -1,0 +1,82 @@
+========================================================================
+TABLE FILE
+------------------------------------------------------------------------
+Table ID    : SP-00-T03
+Label       : TABLE III
+Cited in    : SP-00, Sections V-B, V-C, VII
+Source      : Original; order follows [TPIL4], [MIL], [NNG4]
+Revision    : A  2026-11-25
+========================================================================
+
+                               TABLE III
+                P01 PHASES, READINGS, AND EXIT CRITERIA
+
++-----------+---------------------------------+------------------------+
+| Phase     | Topics; readings; practice      | Exit criterion         |
+| Weeks     |                                 |                        |
+| Milest.   |                                 |                        |
++===========+=================================+========================+
+| 0         | Environment. Install Lean 4 and | A test file compiles   |
+| W1        | the editor extension; create    | in the workspace;      |
+| M0        | the Lake workspace with         | toolchain recorded     |
+|           | Mathlib; record the toolchain.  | (BP-04); TABLE II and  |
+|           | Read: [MATHLIB-START].          | SP-00 V-D artifacts    |
+|           |                                 | checked.               |
++-----------+---------------------------------+------------------------+
+| 1         | Propositions as types.          | Ten propositional      |
+| W1-W2     | Implication, and, or, not, iff. | tautologies proved in  |
+| M1        | Term style versus tactic style: | both styles; first     |
+|           | intro, exact, apply,            | session report and     |
+|           | constructor, cases.             | chat log issued.       |
+|           | Read: [TPIL4] "Dependent Type   |                        |
+|           | Theory", "Propositions and      |                        |
+|           | Proofs", "Tactics".             |                        |
+|           | Practice: [NNG4] Tutorial       |                        |
+|           | World.                          |                        |
++-----------+---------------------------------+------------------------+
+| 2         | Quantifiers and equality.       | Exercises of the       |
+| W3        | forall, exists, rfl, rw, calc.  | chapter sorry-free.    |
+| M2        | Read: [TPIL4] "Quantifiers and  |                        |
+|           | Equality".                      |                        |
++-----------+---------------------------------+------------------------+
+| 3         | Inductive types, recursion, and | Commutativity of       |
+| W4-W5     | induction on Nat.               | addition on Nat proved |
+| M3        | Read: [TPIL4] "Inductive        | from the definitions.  |
+|           | Types", "Induction and          |                        |
+|           | Recursion".                     |                        |
+|           | Practice: [NNG4] Addition World |                        |
+|           | and following worlds.           |                        |
++-----------+---------------------------------+------------------------+
+| 4         | Structures, type classes,       | A structure with a     |
+| W6-W7     | coercions; reading Mathlib      | class instance defined |
+| M4        | source; naming conventions.     | and a lemma about it   |
+|           | Read: [TPIL4] "Structures and   | proved and named by    |
+|           | Records", "Type Classes";       | convention.            |
+|           | [MATHLIB-STYLE].                |                        |
++-----------+---------------------------------+------------------------+
+| 5         | Mathematics in Mathlib: logic,  | Exercises of three MIL |
+| W8-W10    | sets and functions, elementary  | chapters sorry-free.   |
+| M5        | number theory; library search   |                        |
+|           | (exact?, apply?).               |                        |
+|           | Read: [MIL] "Basics", "Logic",  |                        |
+|           | "Sets and Functions",           |                        |
+|           | "Elementary Number Theory".     |                        |
++-----------+---------------------------------+------------------------+
+| 6         | Capstone and foundations.       | Capstone sorry-free;   |
+| W11-W12   | Formalize one result from the   | #print axioms          |
+| M6        | course; audit its axioms;       | recorded; P01 closing  |
+|           | consolidate positions on        | report issued.         |
+|           | P01-OQ-01 to P01-OQ-10.         |                        |
+|           | Read: [TPIL4] "Axioms and       |                        |
+|           | Computation".                   |                        |
++-----------+---------------------------------+------------------------+
+
+Notes:
+(a) W1 is the first week of P01. Weeks are a default and will be fixed
+    to calendar dates from the syllabus in SP-00 Rev B (SP-00/A-01).
+(b) Chapters are cited by title, not number, because numbering differs
+    between editions of the online texts.
+(c) Each phase closes with a phase review, Pnn-YYYY-MM-DD-PR, checked
+    against this column.
+
+Sources: [TPIL4], [MIL], [NNG4], [MATHLIB-START], [MATHLIB-STYLE].

@@ -1,0 +1,84 @@
+========================================================================
+FIGURE FILE
+------------------------------------------------------------------------
+Figure ID   : P01-2026-11-25-F02
+Label       : Fig. 1 of P01-2026-11-25-RT02
+Cited in    : P01-2026-11-25-RT02, Sections I and IV
+Source      : Video frame of [JOSEPHSON25-L01] at 1:08:14 (4094 s),
+              https://youtu.be/s9Dyiu4S4vA?t=4094
+              Slide 69 by T. Josephson; third-party material.
+Image file  : 99_LOCAL/frames/s9Dyiu4S4vA_t04094.png
+              (1280 x 720; local only, DEC-00 R-10)
+Regenerate  : make shot V=s9Dyiu4S4vA T=4094
+Captured by : AI assistant with ffmpeg, from the local video file
+Revision    : A  2026-11-25
+========================================================================
+
+TRANSCRIPTION OF THE SLIDE
+
+Title: Bug-Free BET Analysis                          (slide no. 69)
+
+Top row, a pipeline; the three boxes are outlined in purple:
+
+              +--------------+  +-----------+  +------------+
+  Adsorption  | Filter data  |  | Linearize |  | Perform    |  Fitted
+  data    --> | to focus on  |->| the raw   |->| linear     |->coeffi-
+              | "BET regime" |  | data      |  | regression |  cients
+              +--------------+  +-----------+  +------------+
+
+Bottom row, four boxes outlined in green:
+
+  Box 1 (large, left):
+      Formal proof of BET Theory
+
+                         v_m c p
+          q = ---------------------------------
+              (p0 - p) (1 + (c - 1) (p / p0))
+
+      follows from a body of assumptions about
+      [drawing: stacks of green spheres on a surface, layers labeled
+       s_0, s_1, s_2, s_3, ..., s_inf, captioned "BET Adsorption",
+       with the two relations]
+
+          V = V_0 * SUM (i = ... to infinity) of i * s_i
+          s_i = C * x^i * s_0
+
+  Box 2:  Proof that algebra for linearization is correct
+  Box 3:  Proof that linear regression minimizes least squares error
+  Box 4:  Proof that output corresponds to meaningful parameters
+
+Box 2 sits under "Linearize the raw data" and box 3 under "Perform
+linear regression". No box sits under "Filter data". A mouse pointer
+is on box 3. A presenter toolbar is at the lower left.
+
+The lower index of the sum is too small to read in the frame; the
+formula is otherwise transcribed in full.
+
+ANALYSIS
+
+1) The slide pairs a computation (top row) with proofs about it
+   (bottom row). Every proof named is a statement of real analysis
+   or algebra: a derivation, an algebraic identity, a minimization
+   property.
+
+2) Nothing on the slide mentions number representation. The remark
+   for which this frame was taken -- proofs are written over the real
+   numbers, and the same proofs cannot be written over floating-point
+   numbers -- is spoken over it.
+
+3) The first pipeline step, filtering to the "BET regime", has no
+   proof box. The lecturer names that step as the largest source of
+   disagreement between laboratories. It is also the one step that
+   is a decision by comparison, not a formula.
+
+4) Box 4 speaks of "output". If output means the numbers the program
+   prints, then box 4 claims something about floating-point values,
+   which the proofs of boxes 1 to 3, being over the reals, cannot by
+   themselves deliver. If it means the real-valued result of the
+   formulas, it is consistent with them. The slide does not say
+   which.
+
+------------------------------------------------------------------------
+Fig. 1. Slide "Bug-Free BET Analysis" from lecture L01 at 1:08:14,
+transcribed. A data-analysis pipeline and the four proofs proposed
+about it.

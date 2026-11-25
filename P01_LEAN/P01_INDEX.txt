@@ -1,0 +1,133 @@
+========================================================================
+PROJECT P01: LEAN -- INDEX
+========================================================================
+
+Document ID : P01-INDEX
+Revision    : B
+Date        : 2026-11-25 (living register; entries are dated)
+Declaration : DEC-00
+Governed by : SP-00; syllabus P01-SYL
+File        : P01_LEAN/P01_INDEX.txt
+
+------------------------------------------------------------------------
+I. SESSION LOG
+------------------------------------------------------------------------
+
+S00  2026-11-25  Planning and declaration (no lecture session)
+     Records : P01-2026-11-25-C, P01-2026-11-25-C-RAW
+               P01-2026-11-25-RT01, P01-2026-11-25-F01
+               P01-2026-11-25-RT02, P01-2026-11-25-F02
+     Outcome : DEC-00 Rev A, SP-00 Rev B, and P01-SYL Rev A issued.
+               Repository set up. Timestamps taken at
+               [L01 @ 13:58] and [L01 @ 1:08:14]; research topics
+               RT-01 and RT-02 opened.
+
+<Next entry form:>
+<Snn  YYYY-MM-DD  Lnn: topic>
+<     Records : P01-YYYY-MM-DD-R, -C, -C-RAW, -S01, -RTnn, -Fnn>
+<     Outcome : one line>
+
+------------------------------------------------------------------------
+II. LEAN WORKSPACE
+------------------------------------------------------------------------
+
+Path       : P01_LEAN/lean/   (not yet created; SP-00/A-03)
+Created    : --
+Toolchain  : --   (contents of lean-toolchain)
+Mathlib    : --
+Changes    : <date, old version -> new version, reason>
+
+------------------------------------------------------------------------
+III. LOCAL SOURCES (NOT PUBLISHED)
+------------------------------------------------------------------------
+
+Lecture videos and transcripts are produced by the author's own
+tools into ~/Downloads/SharedVM/, named <channel>-<title>_<video
+id>.mp4 and .txt, and matched by video id. "make sources" copies the
+transcripts into 99_LOCAL/transcripts/.
+
+On hand, 2026-11-25: videos L01 to L11; transcripts L01 and L02.
+
+------------------------------------------------------------------------
+IV. RESEARCH TOPICS OPENED IN THIS PROJECT
+------------------------------------------------------------------------
+
+RT-01  Can every software error be moved to the editor?
+       [L01 @ 13:58]   OPEN   P01-2026-11-25-RT01
+RT-02  What does a proof over the reals say about a program run in
+       floating point?
+       [L01 @ 1:08:14] OPEN   P01-2026-11-25-RT02
+
+Register: 00_COURSE/RESEARCH_TOPICS.txt
+
+------------------------------------------------------------------------
+V. OPEN-QUESTION REGISTER
+------------------------------------------------------------------------
+
+Status values: OPEN (not yet discussed); ACTIVE (under discussion);
+POSITION (a reasoned position is recorded -- cite the record);
+DEFERRED. Full text of P01-OQ-01 to P01-OQ-10: SP-00, Section V-D.
+
+ID         Question                                 Status  Records
+P01-OQ-01  What is a proof?                         OPEN    SP-00
+P01-OQ-02  What does a proof compute?               OPEN    SP-00; RT-01
+P01-OQ-03  What, exactly, is trusted?               OPEN    SP-00; RT-01
+P01-OQ-04  Verified, but valid?                     OPEN    SP-00;
+                                                    RT-01, RT-02
+P01-OQ-05  Constructive or classical?               OPEN    SP-00
+P01-OQ-06  When are two things equal?               OPEN    SP-00
+P01-OQ-07  Does an automated proof explain?         OPEN    SP-00
+P01-OQ-08  Is mathematics being engineered?         OPEN    SP-00
+P01-OQ-09  What does the foundation change?         OPEN    SP-00
+P01-OQ-10  What can formal proof not do?            OPEN    SP-00
+
+------------------------------------------------------------------------
+VI. OPEN ACTIONS
+------------------------------------------------------------------------
+
+Cited as <Document ID>/A-nn. RT01 and RT02 below stand for
+P01-2026-11-25-RT01 and P01-2026-11-25-RT02.
+
+DEC-00/A-01   Confirm rule R-10: third-party      Due: next session
+              material local only.
+DEC-00/A-02   Confirm two readings of the         Due: next session
+              spoken declaration (DEC-00, V).
+SP-00/A-02    Verify the entries of               Due: end of W1
+              REFERENCES.txt marked UNVERIFIED.
+SP-00/A-03    Install Lean 4 and Mathlib; create  Due: end of W1
+              the workspace; check SP-00 TABLE II
+              and the V-D artifacts.
+SP-00/A-04    Confirm the "IEEE storage format"   Due: session S01
+              interpretation (SP-00 III-A).
+SP-00/A-05    Measure time per session over       Due: end of W3
+              three reports; adjust the time-box.
+P01-SYL/A-01  Confirm the reading of "15 hours";  Due: session S01
+              fix the split per lecture.
+P01-SYL/A-02  Transcripts for L03 to L11;         Due: before each
+              "make sources".                     session
+P01-SYL/A-03  Open the course repository; record  Due: session S01
+              its Lean and Mathlib versions.
+P01-SYL/A-04  Confirm row-to-video mapping,       Due: with A-02
+              L03 to L11.
+RT01/A-01     Check the Lean examples in the      Due: session S01
+              editor.
+RT01/A-02     Record the author's positions on    Due: session S01
+              Q1 to Q9.
+RT01/A-03     Check the quotations against the    Due: session S01
+              audio.
+RT01/A-04     Test Q9: resource failure; silent   Due: workshop S01
+              integer wrap.
+RT01/A-05     Add two rows to SP-00 TABLE IV.     Due: SP-00 Rev C
+RT02/A-01     Run the a + b - b example; record   Due: session S01
+              the output.
+RT02/A-02     Record the author's positions on    Due: session S01
+              Q1 to Q9 and on Section IV-H.
+RT02/A-03     Verify references [2] to [5].       Due: with SP-00/A-02
+RT02/A-04     Check the quotations against the    Due: session S01
+              audio.
+RT02/A-05     Decide whether to approve SIDE-01.  Due: author
+RT02/A-06     Add two rows to SP-00 TABLE IV.     Due: SP-00 Rev C
+
+Closed actions, with the date and the closing record:
+
+SP-00/A-01    Obtain the syllabus.     CLOSED 2026-11-25 by P01-SYL

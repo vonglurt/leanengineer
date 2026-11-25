@@ -1,0 +1,239 @@
+========================================================================
+                          PROJECT DECLARATION
+            leanengineer -- Class Notes of Von Glurt
+========================================================================
+
+Document ID : DEC-00
+Revision    : A
+Date        : 2026-11-25
+Author      : Paul Richeson, writing as Von Glurt
+              (GitHub account: vonglurt)
+License     : MIT, for the author's own notes (rule R-10)
+Repository  : https://github.com/vonglurt/leanengineer
+Source      : Declaration as spoken, [P01-2026-11-25-C, #003] and
+              verbatim in P01-2026-11-25-C-RAW, #003
+File        : 00_COURSE/DEC-00_DECLARATION.txt
+
+------------------------------------------------------------------------
+
+Abstract--This declaration states what the leanengineer notebook is,
+for whom it is written, and the standing rules under which every
+document in it is produced. It is the fixed reference that each
+published document cites, together with the chat history in which the
+document was worked out.
+
+Index Terms--declaration, audience, standing rules, class notes,
+Lean 4, research protocol.
+
+------------------------------------------------------------------------
+I. DECLARATION
+------------------------------------------------------------------------
+
+These are the MIT-licensed personal class notes of Von Glurt, begun
+on 2026-11-25. Von Glurt is the name under which Paul Richeson
+publishes; the two names denote one person, and the GitHub account is
+vonglurt.
+
+The date of record is 2026-11-25. The declaration as spoken gave
+"2026 Nov 26"; the author then chose the date shown by the computer's
+clock [P01-2026-11-25-C, #005].
+
+------------------------------------------------------------------------
+II. PURPOSE
+------------------------------------------------------------------------
+
+The notebook is a hybrid of two things.
+
+1) Class lecture notes. The first project, P01, follows the public
+   lecture series "Lean for Scientists and Engineers, Summer 2024" by
+   Tyler Josephson [1], and learns the Lean 4 theorem prover from it.
+
+2) Philosophical analysis. Most of the working time goes to what the
+   material means: the future implications of these technologies, and
+   new ways of thinking, worked out by applying them to the symbolic
+   notation of machine-checked proof.
+
+The method is the engineer's: divide a behavior into regions, classify
+each region, and tie each class to something that can be measured --
+as piecewise analysis turns a nonlinear characteristic into regions
+with empirical parameters.
+
+------------------------------------------------------------------------
+III. AUDIENCE
+------------------------------------------------------------------------
+
+Every document is written for two readers at once.
+
+A. The Expert Professor
+
+An expert who needs reminding, not teaching. The reader is trusted to
+follow full technical precision and to see the general application
+without being led to it. Reminders are given by reference to source
+material, not by tutorial exposition. The reader is assumed fluent
+in:
+
+  - circuit theory; mesh and nodal analysis; two-port networks and
+    their H (hybrid) and S (scattering) parameters;
+  - advanced matrix mathematics, including complex matrices;
+  - complex analysis;
+  - partial differential equations;
+  - Fourier and Laplace transforms and their inverses; s-domain
+    analysis; impulse response and the Dirac delta; steady-state
+    analysis;
+  - control systems theory, including PID control, and the solution
+    of systems of equations by control-theoretic methods;
+  - probability and number systems;
+  - mechanics and dynamics.
+
+Analogies are therefore drawn from these fields without preamble, and
+each states where it breaks down (BP-10).
+
+B. The Superintelligent Reader
+
+A reader, human or machine, able to check everything. For this reader
+every claim is assumed to be referenceable and researchable, so every
+claim carries its source, and every source carries the assumptions on
+which it rests (rule R-02). Nothing is asserted on authority alone.
+
+------------------------------------------------------------------------
+IV. STANDING RULES
+------------------------------------------------------------------------
+
+R-01  Questions first. A new research topic opens with a written set
+      of questions before any conclusions (BP-13). The topic is
+      entered in 00_COURSE/RESEARCH_TOPICS.txt. The first use is
+      RT-01 [P01-2026-11-25-RT01].
+
+R-02  Sources and their assumptions. Every claim cites a source, and
+      every source entry records what that source assumes (BP-14).
+      A claim with no source is marked as the author's own reasoning.
+
+R-03  Lecture timestamps. A moment in a lecture is cited as
+      [Lnn @ h:mm:ss] with its share link,
+      https://youtu.be/<video id>?t=<seconds>. If the author gives a
+      timestamp without the link, the assistant asks for the link
+      (BP-15).
+
+R-04  Screenshots. The assistant takes them. A lecture frame is
+      captured from the local video file at the cited second
+      ("make shot"); a screenshot of the author's own screen is taken
+      or filed on request. Each becomes a figure file: the image, an
+      ASCII transcription of what it shows, and an analysis (BP-15).
+
+R-05  Declaration and chat history. This declaration and the chat
+      history are kept. Every published document cites DEC-00 and the
+      chat log or logs in which it was worked out (BP-17). Chat logs
+      are kept raw and edited, as set out in SP-00, Section III-F.
+
+R-06  Working mode. The assistant researches and thinks in the
+      session, synchronously, with the author reading along and
+      taking notes. It does not spawn background agents. A long
+      exploration is not started on the assistant's own initiative:
+      it is proposed to the author as a side research project
+      (R-07), for which another agent may then be granted permission.
+      Questions are asked at the start, together, each with a
+      recommendation; the author will generally take the logical
+      best choice for an engineer.
+
+R-07  Side projects. Ideas for later work go to
+      00_COURSE/SIDE_PROJECTS.txt as they arise, with their origin,
+      so that the main line of study is not interrupted.
+
+R-08  Form. ASCII text, hard line returns, IEEE report structure,
+      critical review last, tables and figures as cited files, notes
+      filed by project and by date -- as defined in SP-00.
+
+R-09  Repository and deployment. The notebook is a git repository
+      published at the address above. "make deploy" is defined as:
+      (1) run the format checks and stop on any failure; (2) stage
+      everything not excluded by .gitignore; (3) commit, if anything
+      is staged; (4) push to origin main. It never forces a push,
+      rewrites history, or publishes local-only material.
+
+R-10  License and third-party material. The MIT license covers the
+      author's own notes, analysis, and code. Lecture videos,
+      transcripts, and slides belong to their authors. Full
+      transcripts and raw video frames are kept in 99_LOCAL/, which
+      is not published; the notes quote short passages with
+      timestamped links and publish only descriptions of frames
+      (BP-16). This rule was recommended by the assistant and awaits
+      the author's confirmation (A-01).
+
+------------------------------------------------------------------------
+V. TEXT OF RECORD
+------------------------------------------------------------------------
+
+The declaration as spoken is kept verbatim in P01-2026-11-25-C-RAW,
+turn #003, and in corrected form in [P01-2026-11-25-C, #003]. Where
+this document and the spoken text differ in meaning, the spoken text
+governs and this document is to be revised.
+
+Two phrases of the spoken text were uncertain and are marked [?] in
+the edited log: "a symbolic notation of a Porff class", read here as
+the symbolic notation of proof; and "control theory of kinesis", read
+here as control-theoretic methods generally (A-02).
+
+------------------------------------------------------------------------
+VI. CRITICAL REVIEW AND BEST PRACTICES
+------------------------------------------------------------------------
+
+A. What Works
+
+The declaration separates what is fixed (purpose, audience, rules)
+from what changes (plans, syllabus, notes), so later documents can
+cite it without restating it.
+
+B. Weaknesses and Risks
+
+1) Two audiences can pull apart: the expert wants brevity, the
+   checking reader wants every assumption stated. Resolution adopted:
+   brevity in the prose, completeness in the references.
+2) Rule R-10 limits what is published. Should the author prefer to
+   publish frames or transcripts, the lecturer's permission or a
+   stated license is needed first; the transcripts on hand record
+   "License: not stated".
+3) Two readings in Section V are the assistant's (A-02).
+
+C. Best Practices Incorporated
+
+BP-13 (questions first), BP-14 (expert reader; source assumptions),
+BP-15 (timestamped, transcribed evidence), BP-16 (third-party
+material stays local; proposed), BP-17 (every published document
+cites DEC-00 and its chat logs). Sources: this declaration; [2].
+
+D. Prior Work
+
+[P01-2026-11-25-C] and SP-00 Rev A, which this declaration extends.
+
+E. Actions
+
+A-01  Confirm or amend rule R-10 (third-party material local only).
+                                                    Due: next session
+A-02  Confirm or correct the two readings in Section V.
+                                                    Due: next session
+
+------------------------------------------------------------------------
+REFERENCES
+------------------------------------------------------------------------
+
+[1]  T. Josephson, "Lean for Scientists and Engineers, Summer 2024,"
+     lecture series, 11 videos, YouTube, 2025. [Online]. Available:
+     https://www.youtube.com/@tylerjosephson8860
+     (key JOSEPHSON25-LFSE)
+
+[2]  SP-00, Study Plan and Notebook Method, Rev B.
+     00_COURSE/SP-00_STUDY_PLAN.txt
+
+Internal Records
+
+[P01-2026-11-25-C]     Planning discussion and declaration, chat log.
+                       P01_LEAN/2026-11-25/P01-2026-11-25-C.txt
+[P01-2026-11-25-RT01]  Research topic RT-01, opening note.
+                       P01_LEAN/2026-11-25/
+
+------------------------------------------------------------------------
+REVISION HISTORY
+------------------------------------------------------------------------
+
+Rev  Date        Change
+A    2026-11-25  Initial issue, from [P01-2026-11-25-C, #003-#006].

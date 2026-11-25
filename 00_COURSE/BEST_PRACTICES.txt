@@ -1,0 +1,240 @@
+========================================================================
+BEST-PRACTICE REGISTER
+========================================================================
+
+Document ID : BEST_PRACTICES
+Revision    : C
+Date        : 2026-11-25 (living register)
+Declaration : DEC-00
+Governed by : SP-00, Section VI-C
+File        : 00_COURSE/BEST_PRACTICES.txt
+
+------------------------------------------------------------------------
+HOW TO USE
+------------------------------------------------------------------------
+
+Every report's critical review (Section VII) cites the practices it
+applied, by ID, and may propose new ones. This register is kept at
+course level so that practices learned in one project carry into the
+next.
+
+Status values:
+  ACTIVE    In use. BP-01 to BP-12 are ACTIVE on adoption of SP-00
+            Rev A; BP-13, -14, -15, -17 by the declaration DEC-00.
+  PROPOSED  Raised by a critical review; becomes ACTIVE after use in
+            at least two sessions and a judgment that it is worth its
+            cost.
+  RETIRED   No longer followed. Never deleted; the reason is stated.
+
+Sources are register keys from 00_COURSE/REFERENCES.txt, or Document
+IDs of the records in which the practice originated.
+
+Entry form:
+
+  BP-nn  <SHORT TITLE>
+    Statement  :
+    Source     :
+    Rationale  :
+    Applied in : <Document IDs>
+    Status     :
+
+------------------------------------------------------------------------
+ENTRIES
+------------------------------------------------------------------------
+
+BP-01  TRACEABLE CLAIMS
+  Statement  : Every factual claim in a report cites an external
+               source [n], an internal record (Document ID), or is
+               marked as the author's own reasoning.
+  Source     : IEEE-1012 (traceability); IEEE-REF
+  Rationale  : A claim that cannot be traced cannot be checked or
+               corrected later.
+  Applied in : SP-00
+  Status     : ACTIVE
+
+BP-02  RAW RECORDS ARE NEVER EDITED
+  Statement  : The raw notes and raw chat transcript are kept as
+               captured. Corrections go into an edited copy or a new
+               revision, never into the raw record.
+  Source     : KANARE85; ISO-9001 (control of documented information)
+  Rationale  : The raw record is the evidence; an edited copy without
+               it cannot be audited for drift in meaning.
+  Applied in : SP-00; P01-2026-11-25-C-RAW
+  Status     : ACTIVE
+
+BP-03  REFERENCES ARE VERIFIED BEFORE BEING RELIED ON
+  Statement  : A reference stays UNVERIFIED until its title, authors,
+               venue, pages, and URL are checked against the source.
+               An unverified reference may be listed but not quoted
+               with a page number.
+  Source     : SP-00, Section IX-B
+  Rationale  : References compiled from memory, by a person or by an
+               AI assistant, are a common source of error.
+  Applied in : SP-00; REFERENCES
+  Status     : ACTIVE
+
+BP-04  THE TOOLCHAIN IS RECORDED WITH EVERY RESULT
+  Statement  : Each session report records the contents of the
+               lean-toolchain file and the Mathlib version used.
+  Source     : KANARE85; MATHLIB-START
+  Rationale  : Lean and Mathlib change; a proof is reproducible only
+               against a known version, as a measurement is meaningful
+               only against a known, calibrated instrument.
+  Applied in : SP-00
+  Status     : ACTIVE
+
+BP-05  "PROVED" MEANS SORRY-FREE AND AXIOM-AUDITED
+  Statement  : A result is recorded as proved only when its file
+               compiles with no sorry and #print axioms does not list
+               sorryAx. The axiom list is recorded in the report.
+  Source     : TPIL4 ("Axioms and Computation"); BARENDREGT05
+  Rationale  : A sorry warns where it is written, but theorems that
+               depend on it compile without a warning.
+  Applied in : SP-00
+  Status     : ACTIVE
+
+BP-06  THE STATEMENT IS VALIDATED, NOT ONLY THE PROOF
+  Statement  : Before proving, restate the theorem in words and test
+               it against edge cases: zero, empty, truncating
+               subtraction, division by zero, impossible hypotheses.
+  Source     : IEEE-1012 (verification versus validation)
+  Rationale  : Lean verifies the proof against the statement; only the
+               author can validate the statement against the intent.
+  Applied in : SP-00 (P01-OQ-04)
+  Status     : ACTIVE
+
+BP-07  INFORMAL ARGUMENT FIRST, FORMAL PROOF SECOND
+  Statement  : Write the informal argument in the report before
+               writing the Lean proof.
+  Source     : Author's engineering practice (design before
+               implementation); SP-00, Section V-D
+  Rationale  : Without a stated intent, a formal proof has nothing to
+               be checked against but itself.
+  Applied in : SP-00
+  Status     : ACTIVE
+
+BP-08  CITATION BY STABLE IDENTIFIERS ONLY
+  Statement  : Points inside records are cited by section, chat turn
+               (#nnn), BP-nn, Pnn-OQ-nn, or A-nn -- never by page or
+               line number.
+  Source     : ISO-15289 (identified information items)
+  Rationale  : Line and page numbers change when a file is revised;
+               identifiers do not.
+  Applied in : SP-00
+  Status     : ACTIVE
+
+BP-09  EVERY REVIEW ENDS IN ACTIONS
+  Statement  : Each critical review ends with at least one action
+               (A-nn) with a due date, and the next session begins by
+               rereading the open actions.
+  Source     : ISO-9001 (Plan-Do-Check-Act)
+  Rationale  : A review that changes nothing is not a review.
+  Applied in : SP-00
+  Status     : ACTIVE
+
+BP-10  EVERY ANALOGY IS GROUNDED AND BOUNDED
+  Statement  : Each philosophical claim is tied to a Lean artifact
+               where possible, and each engineering analogy states
+               where it breaks down.
+  Source     : SP-00, Section V-D
+  Rationale  : The class spends most of its time on meaning;
+               grounding keeps that discussion checkable, and a stated
+               limit keeps an analogy from being taken too far.
+  Applied in : SP-00 (TABLE IV)
+  Status     : ACTIVE
+
+BP-11  TABLES AND FIGURES ARE SEPARATE, CITED FILES
+  Statement  : Tables and figures live in their own files and are
+               cited in the body by IEEE label and file path, like a
+               picture or a data source.
+  Source     : Author's convention; IEEE-REF (labeling)
+  Rationale  : Readable 72-column prose; one table can serve several
+               reports and be corrected without reissuing them.
+  Applied in : SP-00
+  Status     : ACTIVE
+
+BP-12  LEAN SOURCE FOLLOWS MATHLIB STYLE
+  Statement  : .lean files follow the Mathlib style and naming
+               guidelines, including Unicode notation; ASCII notes
+               transcribe with SP-00, TABLE II.
+  Source     : MATHLIB-STYLE
+  Rationale  : Code written in the community's style can be read
+               against, and compared with, the library.
+  Applied in : SP-00
+  Status     : ACTIVE
+
+BP-13  QUESTIONS FIRST
+  Statement  : A new research topic opens with its source, the
+               source's assumptions, and a written set of questions,
+               before any analysis or conclusion.
+  Source     : DEC-00, rule R-01
+  Rationale  : A conclusion written first shapes which questions get
+               asked; questions written first expose the assumptions
+               the conclusion would have hidden.
+  Applied in : P01-2026-11-25-RT01 (first use); RESEARCH_TOPICS
+  Status     : ACTIVE
+
+BP-14  WRITE FOR THE EXPERT; STATE EACH SOURCE'S ASSUMPTIONS
+  Statement  : Documents address an expert reader: precise, without
+               tutorial exposition, reminding by reference. Every
+               source cited carries the assumptions it rests on, in
+               the reference register and where it is used.
+  Source     : DEC-00, Section III and rule R-02
+  Rationale  : A reader able to check everything needs the
+               assumptions, not the explanation.
+  Applied in : DEC-00; P01-SYL; P01-2026-11-25-RT01; REFERENCES
+  Status     : ACTIVE
+
+BP-15  EVIDENCE IS TIMESTAMPED AND TRANSCRIBED
+  Statement  : A lecture moment is cited as [Lnn @ h:mm:ss] with its
+               share link. A screenshot becomes a figure file with
+               an ASCII transcription and an analysis; a video frame
+               records the command that regenerates it.
+  Source     : DEC-00, rules R-03 and R-04
+  Rationale  : A timestamped link lets any reader check the source
+               in seconds; a transcription makes an image searchable
+               and keeps the record readable as plain text.
+  Applied in : P01-2026-11-25-F01; P01-2026-11-25-RT01; P01-SYL
+  Status     : ACTIVE
+
+BP-16  THIRD-PARTY MATERIAL STAYS LOCAL
+  Statement  : Full transcripts, video frames, and other third-party
+               material are kept in 99_LOCAL/, which is not
+               published. Notes quote short passages with citations
+               and publish descriptions of frames, not the frames.
+  Source     : DEC-00, rule R-10 (recommended by the assistant)
+  Rationale  : The MIT license can cover only the author's own work;
+               the lecture transcripts on hand record "License: not
+               stated".
+  Applied in : P01-2026-11-25-F01; .gitignore
+  Status     : PROPOSED (awaiting the author; DEC-00/A-01)
+
+BP-17  EVERY PUBLISHED DOCUMENT CITES THE DECLARATION AND ITS CHATS
+  Statement  : The header of every published document names DEC-00
+               and the chat log or logs in which the document was
+               worked out.
+  Source     : DEC-00, rule R-05
+  Rationale  : The declaration fixes purpose and audience; the chat
+               log shows how each decision was reached.
+  Applied in : P01-SYL; P01-2026-11-25-RT01; SP-00 Rev B
+  Status     : ACTIVE
+
+BP-18  RESTATE A GUARANTEE AS A THEOREM
+  Statement  : When a source offers a guarantee, write it as a
+               theorem -- hypotheses, conclusion, about which
+               objects -- before discussing it.
+  Source     : P01-2026-11-25-RT02, Section VI
+  Rationale  : In RT-02 this separated three claims that the source
+               ran together: the theory is correct, the code is the
+               theory, the code is numerically close.
+  Applied in : P01-2026-11-25-RT02
+  Status     : PROPOSED
+
+------------------------------------------------------------------------
+REVISION HISTORY
+------------------------------------------------------------------------
+
+Rev  Date        Change
+A    2026-11-25  Register opened with BP-01 to BP-12 from SP-00 Rev A.
+B    2026-11-25  BP-13 to BP-17 added from DEC-00.
+C    2026-11-25  BP-18 proposed from P01-2026-11-25-RT02.

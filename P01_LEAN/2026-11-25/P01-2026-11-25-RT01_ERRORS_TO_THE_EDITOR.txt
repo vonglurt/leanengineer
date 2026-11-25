@@ -1,0 +1,341 @@
+========================================================================
+       RESEARCH TOPIC RT-01 -- OPENING NOTE
+       Can Every Software Error Be Moved to the Editor?
+========================================================================
+
+Document ID : P01-2026-11-25-RT01
+Revision    : A
+Date        : 2026-11-25
+Project     : P01 Lean
+Topic       : RT-01 (00_COURSE/RESEARCH_TOPICS.txt)
+Author      : Von Glurt, with AI assistant (Claude Code)
+Declaration : DEC-00
+Chat record : [P01-2026-11-25-C, #003-#006]
+Lecture     : [L01 @ 13:58]  https://youtu.be/s9Dyiu4S4vA?t=838
+              Chapter "Types of errors", 10:47 to 16:25 [1]
+Status      : OPEN -- questions posed; preliminary analysis by the
+              assistant; the author's positions not yet recorded
+Toolchain   : none; Lean examples below are UNVERIFIED (A-01)
+File        : P01_LEAN/2026-11-25/
+              P01-2026-11-25-RT01_ERRORS_TO_THE_EDITOR.txt
+
+------------------------------------------------------------------------
+
+Abstract--The first concept taken from the lectures is a slide that
+sorts the errors of scientific software into syntax, runtime, and
+semantic, and claims that Lean catches all three in the editor. This
+note opens the topic in the required order: the claim as made, the
+assumptions on which it rests, the questions it raises, and only then
+a preliminary analysis. The analysis finds the claim sound for
+runtime errors by a specific mechanism, and conditional for semantic
+errors: they are caught only against a stated theorem, which moves
+the residual error into the specification.
+
+Index Terms--software errors, static verification, specification,
+type checking, floating point, Lean 4.
+
+------------------------------------------------------------------------
+I. SOURCE AND CLAIM
+------------------------------------------------------------------------
+
+The slide at 13:58 is transcribed and analyzed in Fig. 1
+[file: fig/P01-2026-11-25-F01_L01_ERRORS_SLIDE.txt]. It lists three
+categories of error, each with an example, the conventional
+intervention (editor; running the program; human inspection and
+testing), and the intervention in Lean, which is "Editor" for all
+three.
+
+The claim as spoken, from the automatic captions [1], which are not
+verbatim:
+
+    "what we're proposing is an approach to move all of these kinds
+    of errors and catch them at the editor stage. This means we're
+    going to ship code that is free of syntax, runtime, and semantic
+    errors."
+
+Three qualifications are spoken in the same chapter [1]:
+
+1) A fourth category, floating-point and round-off error, is named
+   and set aside: "That's not what we're focused on."
+2) Asked whether the editor or the compiler gives the guarantee, the
+   lecturer answers that the compiler technically does; the editor is
+   where the author experiences it.
+3) Asked whether a runtime error is also called a logic error, he
+   answers "not necessarily", while noting that "we do use logic to
+   prove that a program won't have any runtime errors."
+
+The transcript carries no timestamps inside a chapter, so these
+passages are cited to the chapter, and the slide to its second.
+
+------------------------------------------------------------------------
+II. ASSUMPTIONS IN THE SOURCE
+------------------------------------------------------------------------
+
+Stated by the lecturer:
+
+S1  Floating-point and round-off error is outside the claim.
+S2  The guarantee is the compiler's (the type checker's), not the
+    editor's.
+
+Not stated, but required for the claim to hold (author's reading):
+
+S3  The categories are defined by the stage at which an error is
+    detected, not by its cause.
+S4  For a semantic error to be caught, the intended behavior has been
+    written as a formal statement to be proved.
+S5  That statement is itself correct: it says what was meant.
+S6  The Lean kernel and the axioms used are trusted (P01-OQ-03).
+
+About this record:
+
+S7  The captions are machine-generated and not verbatim [1].
+
+------------------------------------------------------------------------
+III. OPENING QUESTIONS
+------------------------------------------------------------------------
+
+Q1  Definition. By what criterion is an error put in a category: its
+    cause, or the stage at which it is found? Is the list a
+    partition, or do the categories overlap?
+
+Q2  Mechanism, runtime. What in Lean turns an out-of-range index
+    from an event at run time into an error in the editor?
+
+Q3  Mechanism, semantic. Against what is a missing minus sign an
+    error? What must the author supply before Lean can detect it?
+
+Q4  Scope. What do the three "Editor" cells not cover? Candidates:
+    floating point; an error in the specification; non-termination;
+    exhaustion of stack or memory; the outside world reached through
+    input and output; escape hatches in the language.
+
+Q5  The student's question. Is a runtime error a logic error? Does
+    the correspondence of proofs with programs (P01-OQ-02) give a
+    sharper answer than "not necessarily"?
+
+Q6  Lens. What is the nearest engineering practice, and where does
+    the comparison fail?
+
+Q7  Cost. What is paid to move detection to the editor, and when is
+    the price worth paying?
+
+Q8  Implication. If machines come to write both the code and the
+    proof, what is left for the human to get right?
+
+Q9  Refutation. What observation would show the claim to be false,
+    or narrower than stated?
+
+------------------------------------------------------------------------
+IV. PRELIMINARY ANALYSIS
+------------------------------------------------------------------------
+
+This section is the assistant's reasoning, offered for the author's
+judgment. It is not yet the author's position.
+
+A. On Q1: A Taxonomy of Stages
+
+The slide's categories track where conventional practice finds the
+error: in the editor, in a run, or by a person afterward. Read that
+way, the claim is a re-staging: classes of defect found late are to
+be found at the earliest stage. It does not say the causes vanish.
+
+B. On Q2: Runtime Errors Become Proof Obligations
+
+Lean's index notation carries an obligation: xs[i] is accepted only
+with a proof that i is in range. The error is caught in the editor
+because an unproved obligation is a type error. Lean also offers the
+two conventional behaviors, under different notation, so the choice
+is visible in the source text:
+
+    #eval [10, 20, 30][2]     -- accepted: 2 < 3 is proved for you
+    #eval [10, 20, 30][5]     -- rejected in the editor: no proof
+    #eval [10, 20, 30][5]?    -- accepted: the result is "none"
+    #eval [10, 20, 30][5]!    -- accepted: fails when run
+
+The fourth line shows that the runtime row holds for code that
+declines the escape hatch, not for all code that compiles.
+
+C. On Q3: Semantic Errors Need a Stated Intent
+
+A sign error is an error only relative to what was meant. Lean can
+detect it only if what was meant is written as a statement:
+
+    def f (x : Int) : Int := x - 1       -- intended: x + 1
+    example : f 0 = 1 := by decide       -- rejected in the editor
+
+Without the second line, the first is accepted. The "Editor" cell of
+the Semantic row is therefore conditional on S4 and S5. The error is
+not eliminated; it is relocated, from a long text (the program) into
+a short one (the statement), where a person must still read it. This
+is the distinction between verification and validation [2], and it
+is P01-OQ-04.
+
+D. On Q4 and Q9: What Stays Outside
+
+1) Floating point (S1). A theorem about real numbers says nothing
+   about the same formula evaluated in floating point.
+2) The specification (S5).
+3) Resources. A program proved correct can still exhaust the stack
+   or memory; no type records that it will not.
+4) Fixed-width integers. Arithmetic on a type such as UInt8 wraps
+   without any error: a semantic error unless a theorem forbids it.
+5) Unfinished or unchecked code: sorry, partial definitions, and
+   code marked unsafe.
+
+Any one of these, exhibited in a program that type-checks, narrows
+the claim (Q9). Items 3 and 4 are the cleanest candidates to test.
+
+E. On Q5: The Student's Question
+
+Under the correspondence of proofs with programs, an out-of-range
+index in checked Lean is a failure to supply a proof: a logic error
+in the strict sense, found in the editor. In a conventional language
+the same mistake is a false belief held by the programmer, which the
+machine cannot inspect, and it surfaces at run time. One viewer's
+comment under the video draws this line as "internal" against
+"external" logic errors [1]. On this reading the lecturer's "not
+necessarily" is right about conventional languages, and the sharper
+answer for Lean is yes.
+
+F. On Q6: Lens for the Reader of DEC-00, Section III-A
+
+1) Closed-loop stability. Simulating step responses at chosen
+   operating points is testing. A Routh-Hurwitz, Nyquist, or Lyapunov
+   argument is a proof: it covers every initial condition in its
+   domain. This is the difference between the conventional column
+   and the Lean column.
+
+   Where it breaks: the proof is about the model G(s), not the
+   plant. Model error is specification error (item C). Control
+   theory quantifies that gap with gain and phase margins. Lean has
+   no margin: a statement is proved exactly or not at all.
+
+2) Quantization. A filter designed as H(z) over the reals and built
+   in fixed point has moved poles, round-off noise, and possibly
+   limit cycles. The design proof does not carry to the
+   implementation. This is the lecturer's excluded fourth category
+   (S1), in the reader's own terms.
+
+3) Units. Dimensional analysis rejects volts added to amperes with
+   no theorem stated. Types do the same: a middle ground in which a
+   class of semantic errors is caught without a full specification.
+
+   Where it breaks: units catch a fixed class of mistakes; a type
+   can state any property that can be proved.
+
+G. Preliminary Position
+
+The slide's claim holds in this form: for code inside the checked
+part of the language, runtime errors of the indexing kind are
+excluded by proof obligations, and semantic errors are excluded up to
+the correctness of a formal statement that the author must write.
+Floating point and resource limits are outside it.
+
+------------------------------------------------------------------------
+V. SIDE PROJECTS SUGGESTED
+------------------------------------------------------------------------
+
+Entered in 00_COURSE/SIDE_PROJECTS.txt as candidates:
+
+SIDE-01  Proved bounds on floating-point round-off in Lean.
+SIDE-02  A control-theory result formalized in Lean: a stability
+         criterion for a low-order closed loop.
+SIDE-03  Physical units as types in Lean.
+
+------------------------------------------------------------------------
+VI. CRITICAL REVIEW AND BEST PRACTICES
+------------------------------------------------------------------------
+
+A. What Worked
+
+The order held: claim, assumptions, questions, then analysis. Writing
+the assumptions first exposed S4, on which the whole Semantic row
+depends and which the slide does not show.
+
+B. What Did Not Work; Errata
+
+1) The Lean examples were written without a Lean installation and
+   are unverified (A-01).
+2) Quotations are from automatic captions and have not been checked
+   against the audio (A-03).
+3) The analysis is one voice. It has not yet been argued with.
+
+C. Hidden Assumptions
+
+In the source: S3 to S6. In this note: that the slide's "Editor"
+means the type checker; the lecturer confirms it in speech (S2).
+
+D. Best Practices Applied
+
+BP-13  Questions before conclusions: Section III precedes IV.
+BP-14  Source assumptions stated: Section II.
+BP-15  Timestamped link and transcribed frame: header and Fig. 1.
+BP-10  Each analogy bounded: Section IV-F, "Where it breaks".
+BP-06  Statement validated, not only the proof: Section IV-C.
+BP-16  Frame kept local; only its description is published.
+BP-17  DEC-00 and the chat record cited in the header.
+
+E. Prior Work Confirmed, Extended, or Contradicted
+
+Extends SP-00, P01-OQ-04 (verified, but valid?) with a concrete
+source claim, and SP-00, TABLE IV, with the stability and
+quantization analogies, which are to be added there as rows.
+
+F. Best Practices Proposed
+
+None beyond BP-16, already entered as PROPOSED.
+
+G. Actions
+
+A-01  Check the examples of Sections IV-B and IV-C in the editor;
+      correct this note by revision if any behaves otherwise.
+                                                 Due: session S01
+A-02  Record the author's positions on Q1 to Q9 in the report of
+      session S01, Section V.                    Due: session S01
+A-03  Check the three quotations against the audio near 13:00 to
+      15:30 of L01.                              Due: session S01
+A-04  Test Q9: exhibit, or fail to exhibit, a resource failure and
+      a silent integer wrap in checked Lean.     Due: workshop S01
+A-05  Add the stability and quantization rows to SP-00, TABLE IV.
+                                                 Due: SP-00 Rev C
+
+------------------------------------------------------------------------
+REFERENCES
+------------------------------------------------------------------------
+
+[1]  T. Josephson, "Lean for Scientists and Engineers, Summer 2024 -
+     Lecture 1," YouTube, Jan. 3, 2025. [Online Video]. Available:
+     https://www.youtube.com/watch?v=s9Dyiu4S4vA
+     Chapter "Types of errors", 10:47-16:25; slide at 13:58;
+     viewer comments read 2026-11-25.   (JOSEPHSON25-L01)
+
+[2]  IEEE Standard for System, Software, and Hardware Verification
+     and Validation, IEEE Std 1012-2016.   (IEEE-1012; UNVERIFIED)
+
+Internal Records
+
+[DEC-00]            Project declaration.
+                    00_COURSE/DEC-00_DECLARATION.txt
+[SP-00]             Study plan, Rev B. P01-OQ-02, -03, -04; TABLE IV.
+                    00_COURSE/SP-00_STUDY_PLAN.txt
+[P01-SYL]           Syllabus. P01_LEAN/P01-SYL_SYLLABUS.txt
+[P01-2026-11-25-C]  Planning discussion and declaration, chat log.
+                    P01_LEAN/2026-11-25/P01-2026-11-25-C.txt
+
+Local source (not published; DEC-00, R-10):
+99_LOCAL/transcripts/, file matching *_s9Dyiu4S4vA.txt
+
+------------------------------------------------------------------------
+FIGURES AND TABLES
+------------------------------------------------------------------------
+
+Fig. 1     Slide "Errors in scientific computing software", L01 at
+           13:58, transcribed and analyzed.
+           fig/P01-2026-11-25-F01_L01_ERRORS_SLIDE.txt
+
+------------------------------------------------------------------------
+REVISION HISTORY
+------------------------------------------------------------------------
+
+Rev  Date        Change
+A    2026-11-25  Initial issue.

@@ -1,0 +1,304 @@
+========================================================================
+CHAT LOG -- PLANNING DISCUSSION AND DECLARATION
+========================================================================
+
+Document ID : P01-2026-11-25-C
+Revision    : C
+Date        : 2026-11-25
+Project     : P01 Lean
+Setting     : AI assistant
+Participants: STUDENT (Von Glurt); AI (Claude Code; Claude Opus 5.5
+              for #002, Claude Fable 5.2 from #004)
+Raw copy    : P01-2026-11-25-C-RAW.txt
+Cited by    : DEC-00; SP-00; P01-SYL; P01-2026-11-25-RT01, -RT02
+Declaration : DEC-00 (issued from turn #003 of this log)
+Editor      : AI assistant, for review by the author
+File        : P01_LEAN/2026-11-25/P01-2026-11-25-C.txt
+
+------------------------------------------------------------------------
+EDITORIAL NOTE (SP-00, Section III-F)
+------------------------------------------------------------------------
+
+Spelling and grammar corrected silently. Wording tightened for
+coherence; meaning unchanged.
+  [text]  editor insertion
+  [...]   omission (reason given if longer than one sentence)
+  [?]     meaning uncertain; original wording kept
+Lean code, mathematical statements, error messages, and quotations
+are verbatim.
+
+------------------------------------------------------------------------
+TRANSCRIPT
+------------------------------------------------------------------------
+
+#001  STUDENT  approx. 10:00 PST
+      I am taking notes for a mathematics professor's class. I
+      completed [a degree in] Electrical Engineering at an
+      ABET-accredited university. I always write IEEE-style reports,
+      with a section at the end for a critical review [of] how I
+      incorporate the lessons of best practices, and I reference them
+      to prior work. Write this [up] as my study plan.
+
+      I keep my notes by project and by date, in a folder structure of
+      IEEE storage format. I prefer ASCII text, with line returns. For
+      tables, reference figures or tables like a picture or a
+      data-source reference.
+
+      We spend most of our time philosophizing about what [the
+      material] means in the context of the subject we are studying;
+      in this case, our first project is Lean. [...]
+
+      All the discussions have referenced and documented chat
+      histories: spell-corrected, even grammar-corrected, with the
+      emphasis on keeping [them] coherent and to the point.
+
+#002  AI  approx. 10:00-10:05 PST
+      [Condensed by the editor from the reply and its file actions.]
+
+      The assistant set up the notebook under leanengineer/ and
+      issued the study plan, SP-00 Rev A, as an IEEE-style ASCII
+      report, with its figures, tables, reference and best-practice
+      registers (BP-01 to BP-12), templates, a project index, and
+      this chat log in raw and edited form. It read "IEEE storage
+      format" as IEEE editorial conventions plus uniquely identified
+      files; "line returns" as a hard return by column 72; and
+      "reference tables like a picture" as tables and figures kept in
+      separate, cited files. It added the raw-copy rule (BP-02) and
+      the mandatory "where the analogy breaks" step (BP-10), and
+      flagged its references and Lean examples as unverified.
+
+#003  STUDENT  approx. 10:05-10:15 PST
+      [The declaration. It repeats #001 and continues as follows.]
+
+      Create a syllabus for about 15 hours of lecture time, [with]
+      breaks, and the other, workshop time, used for individual
+      exploration.
+
+      During the lectures we are going to take timestamps; please ask
+      for the YouTube share link if I forget to provide it:
+      https://youtu.be/s9Dyiu4S4vA?t=838. The first concept to
+      research is from the transcript of this [lecture]. We can find
+      it because we used copal linux and ytq [?] to get transcripts,
+      in this case of the public lectures on the YouTube channel of
+      Tyler Josephson, https://www.youtube.com/@tylerjosephson8860.
+
+      In general we want questions when we start a new research
+      topic; this is the best practice, and [this is] the first
+      example use case. We will have many things to research, and we
+      will create a list of future side projects as we think of them.
+
+      We want to talk to an audience of superintelligence. Assume
+      that all things can be referenced and researched, and provide
+      the assumptions in the sources.
+
+      This is a hybrid of class lecture notes and philosophical
+      analysis of the future implications of future technologies, as
+      I research new ways of thinking and apply them to a symbolic
+      notation of a Porff class [?]. The target audience is one who
+      knows circuit theory; advanced matrix mathematics; complex
+      analysis; partial differential equations; inverse Fourier
+      transforms; Laplace transforms; H and S parameters; matrix
+      mathematics with complex analysis; numbers; probabilities;
+      mechanics; dynamics; mesh analysis; control systems theory;
+      solving systems of equations using control theory of kinesis
+      [?]; general control systems and PID; the more complex s-domain
+      and Laplace impulse and Dirac delta response theory; and
+      steady-state systems analysis -- that type of engineering
+      analysis.
+
+      In fact, for nearly every topic we research, we want to
+      consider that we are talking to an expert professor who needs
+      reminding through source reference material, but whom we still
+      trust to be fully capable of understanding the technical
+      precision and its general application -- as an engineer's
+      piecewise analysis allows behaviors to be classified into
+      empirical measurements.
+
+      Keep a copy of this declaration and of our chat history, and
+      reference them each time we create a published document.
+
+      We will often take screenshots. Please take them, encode them
+      into files for reference, refer to them, and analyze them.
+
+      We will also create a git repository; let us make it at
+      https://github.com/vonglurt/leanengineer. Please create a
+      "make deploy" script to do the needful, and define what that
+      is. We have a way to deploy already, and git credentials are
+      already set. Please git init, and set the general declaration
+      of this project: today, by Von Glurt, on 2026 Nov 26;
+      MIT-licensed personal class notes of Von Glurt. Create a README
+      that describes this project; READMEs are very short: we
+      reference where to go, and the general purpose. The GitHub
+      account is vonglurt; the person is Paul Richeson. MIT License.
+
+      Also as a declaration: use this agent to research and think; do
+      not use background agents. Long explorations of research, if
+      you need them, should be requested, for Von Glurt to make a
+      side research project, and then another agent might be granted
+      permission. In general, do not spawn background agents; work
+      synchronously and think along with me. I am here, ready to read
+      your thoughts; I am taking notes live, so I have time to read
+      them and confirm decisions. In general I will accept your
+      recommendations, so try to front-load the questions, because I
+      will generally pick the logical best use case for an engineer.
+
+#004  AI  approx. 10:16 PST
+      [Condensed.] The assistant reported what it had found: the link
+      is "Lean for Scientists and Engineers, Summer 2024 - Lecture 1"
+      at 13:58; the channel holds eleven lectures; the course's
+      schedule lists eleven sessions with topics and readings; the
+      GitHub repository exists, is public, and holds one commit with
+      an MIT license; and YouTube had refused a transcript download
+      from this machine. It then asked four questions, each with a
+      recommendation:
+      (1) Date of record: the declared 2026-11-26, or the clock's
+          2026-11-25?
+      (2) Transcript: how should the passage at 13:58 be supplied?
+      (3) Third-party material: keep full transcripts and video
+          frames local, publishing only citations and descriptions?
+      (4) First push: commit and run "make deploy" at the end?
+
+#005  STUDENT  approx. 10:17 PST
+      [To question 1:] 2026-11-25, per the clock.
+      [Questions 2 to 4 were not answered directly. The student then
+      wrote:] The transcripts are in ~/Downloads/SharedVM/, [in
+      files named] TylerJosephson*, with a wildcard match on the
+      YouTube hash. See the .txt file.
+
+#006  AI  approx. 10:17-11:00 PST
+      [Condensed.] The assistant read the Lecture 1 transcript and
+      its chapter list, and captured the video frame at 838 s from
+      the local file. The frame is the slide "Errors in scientific
+      computing software": syntax, runtime, and semantic errors, each
+      caught in the "Editor" in Lean. It measured the eleven videos
+      at 20 h 41 min in total.
+
+      It then issued, all dated 2026-11-25: the declaration DEC-00;
+      the syllabus P01-SYL with its lecture table; research topic
+      RT-01, opened questions-first on that slide, with the frame
+      transcribed as a figure; the research-topic and side-project
+      registers; SP-00 Rev B; BP-13 to BP-17; seven new references;
+      a short README; and a Makefile defining "make deploy" as
+      check, stage, commit, push. It initialized git on top of the
+      existing license commit and did not commit or push.
+
+      Decisions it took on its own recommendation, for the author to
+      confirm: third-party material kept local (question 3); "15
+      hours" read as exposition time, with follow-along portions of
+      the recordings counted as workshop; schedule rows mapped to
+      videos by order; the license line changed to name Paul Richeson
+      (Von Glurt). Question 4, the first push, was left to the
+      author.
+
+#007  STUDENT  after #006
+      Next topic: https://youtu.be/s9Dyiu4S4vA?t=4094. Lean allows
+      for proofs using real numbers, yet not [for] floating-point
+      errors.
+
+#008  AI  after #007
+      [Condensed.] The assistant captured the frame at 4094 s
+      (1:08:14): slide 69, "Bug-Free BET Analysis", a data-analysis
+      pipeline with four proposed proofs. The slide does not mention
+      floating point; the claim is spoken over it and returns in the
+      lecture's closing question. It opened research topic RT-02,
+      questions first, with the frame transcribed as a figure.
+
+      Its preliminary analysis separates three layers: the theory is
+      correct (proved over the reals); the code is the theory (one
+      polymorphic definition); the code is numerically close (not
+      proved). It observes that floating-point numbers are a subset
+      of the reals as values but not as an arithmetic, since each
+      operation is the real operation followed by rounding; that an
+      error bound is itself a statement about real numbers and so
+      could be proved in Lean, given a model of the arithmetic; and
+      it offers tolerance analysis, common-mode rejection, and
+      fixed-point filter noise as the reader's own versions of the
+      problem. Its preliminary position: the author's statement
+      describes the lecture's method accurately and is too strong as
+      a statement about Lean.
+
+      It added four references (unverified), gave SIDE-01 a concrete
+      target, and proposed BP-18: restate a guarantee as a theorem
+      before discussing it.
+
+------------------------------------------------------------------------
+SUMMARY
+------------------------------------------------------------------------
+
+Key claims
+  - Notes are kept by project and by date; reports are IEEE style
+    and end in a critical review citing best practices and prior
+    work; text is ASCII with hard line returns; tables and figures
+    are cited like pictures or data sources. [#001]
+  - Most working time is philosophical discussion of meaning; the
+    first project is Lean. [#001]
+  - The lectures are Tyler Josephson's public series; about 15 hours
+    of lecture plus workshop time. [#003]
+  - A research topic starts with questions. [#003]
+  - The audience is an expert professor, and a superintelligent
+    reader; sources carry their assumptions. [#003]
+  - Declaration and chat history are kept and cited by every
+    published document. [#003]
+  - The assistant takes, files, and analyzes screenshots. [#003]
+  - The repository is github.com/vonglurt/leanengineer; "make deploy"
+    is to be defined; MIT license; Von Glurt is Paul Richeson. [#003]
+  - No background agents; synchronous work; questions front-loaded
+    with recommendations. [#003]
+  - The date of record is 2026-11-25. [#005]
+  - Transcripts are found by YouTube video id in
+    ~/Downloads/SharedVM/. [#005]
+  - The first concept, at [L01 @ 13:58], is the slide "Errors in
+    scientific computing software". [#006]
+  - Lean allows proofs using real numbers, yet not floating-point
+    errors. [#007]
+  - A proof over the reals guarantees the formula, not the numbers;
+    a floating-point error bound is a separate, provable statement.
+    (Preliminary; the assistant's.) [#008]
+
+Sent to the open-question register
+  - None new. RT-01 links to P01-OQ-02, -03, and -04. [#006]
+
+Sent to the research-topic and side-project registers
+  - RT-01; SIDE-01, SIDE-02, SIDE-03 (candidates). [#006]
+  - RT-02; SIDE-01 given a target. [#008]
+
+Sent to the action lists
+  - DEC-00/A-01, A-02; P01-SYL/A-01 to A-04;
+    P01-2026-11-25-RT01/A-01 to A-05. [#006]
+  - P01-2026-11-25-RT02/A-01 to A-06. [#008]
+
+Editorial decisions
+  - #001: "math profs class" rendered "a mathematics professor's
+    class"; "ABIT accreded" rendered "ABET-accredited"; "Also ."
+    omitted as [...], an unfinished sentence.
+  - #003: the part repeating #001 is not repeated.
+  - #003: "copal linux and ytq" kept and marked [?]: names of the
+    author's tools, not identified by the editor.
+  - #003: "a symbolic notation of a Porff class" kept and marked
+    [?]. Read in DEC-00 as the symbolic notation of proof; it may
+    instead mean the professor's class.
+  - #003: "control theory of kinesis" kept and marked [?]; possibly
+    kinematics or kinetics.
+  - #003: "inverse forreiter transforms" rendered "inverse Fourier
+    transforms"; "laplase transformace" rendered "Laplace
+    transforms"; "daltea derac" rendered "Dirac delta".
+  - #003: "ready to ready your thoughts" rendered "ready to read
+    your thoughts".
+  - #003: the date "2026 Nov 26" is kept as spoken; it was
+    superseded by #005.
+  - #005: "~/Downlaods/SharedVM/TyloerJosephson*" corrected to the
+    path and file prefix that exist on disk.
+  - #007: "profs" rendered "proofs"; "yet not floating point
+    errors" given a bracketed [for]. The sentence can be read two
+    ways -- Lean does not suffer such errors, or Lean cannot prove
+    things about them -- and RT-02 takes the second.
+  - #002, #004, #006, #008 are condensed from long replies.
+
+------------------------------------------------------------------------
+REVISION HISTORY
+------------------------------------------------------------------------
+
+Rev  Date        Change
+A    2026-11-25  Edited from P01-2026-11-25-C-RAW, turns #001-#002.
+B    2026-11-25  Turns #003 to #006 added in the same session.
+C    2026-11-25  Turns #007 and #008 added in the same session.

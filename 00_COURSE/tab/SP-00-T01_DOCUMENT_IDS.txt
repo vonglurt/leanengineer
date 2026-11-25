@@ -1,0 +1,103 @@
+========================================================================
+TABLE FILE
+------------------------------------------------------------------------
+Table ID    : SP-00-T01
+Label       : TABLE I
+Cited in    : SP-00, Section III-B
+Source      : Original
+Revision    : B  2026-11-25
+========================================================================
+
+                                TABLE I
+                  DOCUMENT IDENTIFIERS AND FILE NAMES
+
++------------------------+---------------------------------------------+
+| Document ID            | Meaning; location                           |
++========================+=============================================+
+| DEC-00                 | Project declaration: purpose, audience,     |
+|                        | standing rules.                             |
+|                        | 00_COURSE/DEC-00_DECLARATION.txt. Cited by  |
+|                        | every published document.                   |
++------------------------+---------------------------------------------+
+| SP-00                  | Course study plan.                          |
+|                        | 00_COURSE/SP-00_STUDY_PLAN.txt              |
++------------------------+---------------------------------------------+
+| SP-00-Fnn              | Figure nn and table nn of SP-00. In         |
+| SP-00-Tnn              | 00_COURSE/fig/ and 00_COURSE/tab/.          |
++------------------------+---------------------------------------------+
+| Pnn                    | Project nn (P01 = Lean). Folder Pnn_<NAME>/ |
++------------------------+---------------------------------------------+
+| Pnn-INDEX              | Project index: session log, Lean workspace  |
+|                        | record, open questions, open actions.       |
+|                        | Pnn_<NAME>/Pnn_INDEX.txt                    |
++------------------------+---------------------------------------------+
+| Pnn-SYL                | Project syllabus.                           |
+|                        | Pnn_<NAME>/Pnn-SYL_SYLLABUS.txt; its tables |
+|                        | are Pnn-SYL-Tnn in Pnn_<NAME>/tab/.         |
++------------------------+---------------------------------------------+
+| Lnn                    | Lecture nn of the project's lecture series. |
+|                        | A moment in it is cited as [Lnn @ h:mm:ss]  |
+|                        | with its share link,                        |
+|                        | https://youtu.be/<video id>?t=<seconds>.    |
++------------------------+---------------------------------------------+
+| Pnn-YYYY-MM-DD-R       | Session report. A second session on the     |
+|                        | same date is -R2.                           |
++------------------------+---------------------------------------------+
+| Pnn-YYYY-MM-DD-C       | Chat log, edited: the copy that reports     |
+|                        | cite. Further logs on the same date: -C2,   |
+|                        | -C3, ...                                    |
++------------------------+---------------------------------------------+
+| Pnn-YYYY-MM-DD-C-RAW   | Chat log, raw: as captured, never edited.   |
++------------------------+---------------------------------------------+
+| Pnn-YYYY-MM-DD-Fnn     | Figure nn of that date's report. In         |
+|                        | <date>/fig/.                                |
++------------------------+---------------------------------------------+
+| Pnn-YYYY-MM-DD-Tnn     | Table nn of that date's report. In          |
+|                        | <date>/tab/.                                |
++------------------------+---------------------------------------------+
+| Pnn-YYYY-MM-DD-Snn     | Lean source file nn of that date. Stored in |
+|                        | the project's Lake workspace as             |
+|                        | SYYYYMMDD_nn.lean (Lean module names cannot |
+|                        | contain hyphens).                           |
++------------------------+---------------------------------------------+
+| Pnn-YYYY-MM-DD-PR      | Phase review report, written at the end of  |
+|                        | a phase.                                    |
++------------------------+---------------------------------------------+
+| RT-nn                  | Research topic. Register in                 |
+|                        | 00_COURSE/RESEARCH_TOPICS.txt.              |
++------------------------+---------------------------------------------+
+| Pnn-YYYY-MM-DD-RTnn    | Opening note of research topic RT-nn:       |
+|                        | source, assumptions, questions. In the date |
+|                        | folder.                                     |
++------------------------+---------------------------------------------+
+| SIDE-nn                | Side project. Register in                   |
+|                        | 00_COURSE/SIDE_PROJECTS.txt.                |
++------------------------+---------------------------------------------+
+| Pnn-OQ-nn              | Open question. Register in Pnn_INDEX.txt.   |
++------------------------+---------------------------------------------+
+| BP-nn                  | Best practice. Register in                  |
+|                        | 00_COURSE/BEST_PRACTICES.txt.               |
++------------------------+---------------------------------------------+
+| A-nn                   | Action item, numbered within the document   |
+|                        | that raises it; cited as <Document          |
+|                        | ID>/A-nn, e.g. SP-00/A-01.                  |
++------------------------+---------------------------------------------+
+| #nnn                   | Turn nnn of a chat log; cited as [<Document |
+|                        | ID>, #nnn].                                 |
++------------------------+---------------------------------------------+
+| <KEY>                  | Reference key in 00_COURSE/REFERENCES.txt,  |
+|                        | e.g. TPIL4. Figure and table files cite by  |
+|                        | key, not by number.                         |
++------------------------+---------------------------------------------+
+
+Notes:
+(a) Dates are ISO 8601 (YYYY-MM-DD), so folders and files sort in date
+    order.
+(b) nn is two digits, zero-padded (01, 02, ...); nnn is three.
+(c) File name = <Document ID>[_<SHORT_TITLE>].txt, using only A-Z, a-z,
+    0-9, hyphen, underscore, and period.
+(d) IEEE labels and file indices differ by design: TABLE I is file T01,
+    Fig. 1 is file F01.
+(e) A video frame is stored locally as 99_LOCAL/frames/<video
+    id>_t<seconds>.png and is published only as its ASCII descriptor, a
+    figure file (DEC-00, R-04).
